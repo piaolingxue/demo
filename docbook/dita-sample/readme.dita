@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/dtd/topic.dtd">
+<topic id="readme">
+  <title>About <filepath>demo/dita-sample.ditamap</filepath></title>
+
+  <body>
+    <p>The goal of <filepath>demo/dita-sample.ditamap</filepath> is very
+    modest: allow the curious person to see how DITA topics and maps looks
+    styled by XXE. This document is by no mean a DITA tutorial.</p>
+
+    <note type="remember"><p>If you use XXE to author DITA documents:</p><ul>
+        <li>You'll be able to use not only PNG, JPEG and GIF images to
+        illustrate your documents, but also any image format supported by an
+        <i>image toolkit plug-in</i>.<indexterm>Scalable Vector
+        Graphics<index-see>SVG</index-see><index-see>Batik</index-see></indexterm><indexterm>SVG</indexterm><indexterm>image</indexterm><indexterm>fig</indexterm><fig
+            frame="all">
+            <title>The <tt>image</tt> element contained in this <tt>fig</tt>
+            element points to an SVG file. (Requires the add-on called
+            "<i>Batik image toolkit plug-in</i>".)</title>
+
+            <image align="center" href="../graphics/tux.svg" scale="50"/>
+          </fig></li>
+
+        <li>You'll be able to embed <xref format="html"
+        href="http://www.w3.org/TR/MathML2/"
+        scope="external"><term>MathML</term></xref> equations in your topics
+        and, using the <uicontrol>MathML</uicontrol> tool, to edit these
+        equations without really having to learn
+        MathML.<indexterm>mml:math<index-sort-as>math</index-sort-as></indexterm><indexterm>foreign</indexterm><indexterm>fig</indexterm><fig>
+            <title>This <tt>fig</tt> element contains a <tt>foreign</tt>
+            element itself containing a <tt>mml:math</tt> element. (Requires
+            the add-on called "<i>MathML support</i>" in order to be able to
+            edit the equations.)</title>
+
+            <foreign><ns2:math display="block"
+                xmlns:ns2="http://www.w3.org/1998/Math/MathML">
+                <ns2:mrow>
+                  <ns2:mo>{</ns2:mo>
+
+                  <ns2:mtable>
+                    <ns2:mtr>
+                      <ns2:mtd>
+                        <ns2:mrow>
+                          <ns2:mrow>
+                            <ns2:maligngroup/>
+
+                            <ns2:mo>∇×</ns2:mo>
+
+                            <ns2:mi mathvariant="bold">E</ns2:mi>
+                          </ns2:mrow>
+
+                          <ns2:maligngroup/>
+
+                          <ns2:mo>=</ns2:mo>
+
+                          <ns2:mrow>
+                            <ns2:maligngroup/>
+
+                            <ns2:mo>-</ns2:mo>
+
+                            <ns2:mstyle mathsize="100%">
+                              <ns2:mfrac>
+                                <ns2:mrow>
+                                  <ns2:mo>∂</ns2:mo>
+
+                                  <ns2:mo>⁡</ns2:mo>
+
+                                  <ns2:mi mathvariant="bold">B</ns2:mi>
+                                </ns2:mrow>
+
+                                <ns2:mrow>
+                                  <ns2:mo>∂</ns2:mo>
+
+                                  <ns2:mo>⁡</ns2:mo>
+
+                                  <ns2:mi>t</ns2:mi>
+                                </ns2:mrow>
+                              </ns2:mfrac>
+                            </ns2:mstyle>
+                          </ns2:mrow>
+                        </ns2:mrow>
+                      </ns2:mtd>
+                    </ns2:mtr>
+
+                    <ns2:mtr>
+                      <ns2:mtd>
+                        <ns2:mrow>
+                          <ns2:mrow>
+                            <ns2:maligngroup/>
+
+                            <ns2:mo>∇×</ns2:mo>
+
+                            <ns2:mi mathvariant="bold">B</ns2:mi>
+                          </ns2:mrow>
+
+                          <ns2:maligngroup/>
+
+                          <ns2:mo>=</ns2:mo>
+
+                          <ns2:mrow>
+                            <ns2:mrow>
+                              <ns2:maligngroup/>
+
+                              <ns2:msub>
+                                <ns2:mi>μ</ns2:mi>
+
+                                <ns2:mn>0</ns2:mn>
+                              </ns2:msub>
+
+                              <ns2:mo>⁢</ns2:mo>
+
+                              <ns2:mi mathvariant="bold">J</ns2:mi>
+                            </ns2:mrow>
+
+                            <ns2:mo>+</ns2:mo>
+
+                            <ns2:mrow>
+                              <ns2:msub>
+                                <ns2:mi>μ</ns2:mi>
+
+                                <ns2:mn>0</ns2:mn>
+                              </ns2:msub>
+
+                              <ns2:mo>⁢</ns2:mo>
+
+                              <ns2:msub>
+                                <ns2:mi>ε</ns2:mi>
+
+                                <ns2:mn>0</ns2:mn>
+                              </ns2:msub>
+
+                              <ns2:mo>⁢</ns2:mo>
+
+                              <ns2:mstyle mathsize="100%">
+                                <ns2:mfrac>
+                                  <ns2:mrow>
+                                    <ns2:mo>∂</ns2:mo>
+
+                                    <ns2:mo>⁡</ns2:mo>
+
+                                    <ns2:mi mathvariant="bold">E</ns2:mi>
+                                  </ns2:mrow>
+
+                                  <ns2:mrow>
+                                    <ns2:mo>∂</ns2:mo>
+
+                                    <ns2:mo>⁡</ns2:mo>
+
+                                    <ns2:mi>t</ns2:mi>
+                                  </ns2:mrow>
+                                </ns2:mfrac>
+                              </ns2:mstyle>
+                            </ns2:mrow>
+                          </ns2:mrow>
+                        </ns2:mrow>
+                      </ns2:mtd>
+                    </ns2:mtr>
+                  </ns2:mtable>
+                </ns2:mrow>
+              </ns2:math></foreign>
+          </fig></li>
+      </ul><p>Of course, converting DITA documents making use of the above
+    features to formats such as HTML, PDF, RTF, etc, works fine. You just need
+    to install the following add-ons:</p><ul compact="yes">
+        <li>The add-on called "<cite>XSL-FO processor plug-in</cite>". Note
+        that due to add-on dependencies, installing this add-on will
+        automatically install the add-on called "<cite>Batik image toolkit
+        plug-in</cite>".<indexterm>Batik<index-sort-as>batik</index-sort-as></indexterm></li>
+
+        <li>The add-on called "<cite>MathML support</cite>".</li>
+      </ul><p>Installing add-ons consists in selecting menu item <menucascade>
+        <uicontrol>Options</uicontrol>
+
+        <uicontrol>Install Add-ons</uicontrol>
+      </menucascade>, selecting the desired add-ons, clicking
+    <uicontrol>OK</uicontrol> and then restarting XXE as instructed by the
+    application.</p></note>
+  </body>
+</topic>

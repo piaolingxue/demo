@@ -1,0 +1,609 @@
+@namespace url(http://www.xmlmind.com/xmleditor/schema/form-sampler);
+
+doc {
+    display: block;
+}
+
+para {
+    display: block;
+    margin: 1.33ex 0;
+}
+
+bold {
+    display: inline;
+    font-weight: bold;
+}
+
+doubleE,
+doubleA,
+floatE,
+floatA,
+longE,
+longA,
+intE,
+intA,
+shortE,
+shortA,
+byteE,
+byteA,
+double2,
+double1,
+float2,
+float1,
+long2,
+long1,
+int2,
+int1,
+short2,
+short1,
+byte2,
+byte1,
+day1,
+day2,
+monthDay1,
+monthDay2,
+month1,
+month2,
+yearMonth1,
+yearMonth2,
+year1,
+year2,
+dateTime2,
+dateTime1,
+time2,
+time1,
+date2,
+date1,
+cymklistb,
+cymklista,
+cymkb,
+cymka,
+cymklist2,
+cymklist1,
+cymk2,
+cymk1,
+string2,
+string1,
+fileName,
+uri2,
+uri1,
+integer2,
+integer1,
+rgb2,
+rgb1,
+hidden,
+disabled,
+yesno,
+onoff,
+dateTime30,
+dateTime40,
+time30,
+time40,
+date30,
+date40,
+dateTime31,
+dateTime41,
+time31,
+time41,
+date31,
+date41,
+dateTime32,
+dateTime42,
+dateTime33,
+dateTime43 {
+    display: inline-block;
+    font-size: smaller;
+    padding: 1px; /* Needed to display the red border of the selection */
+}
+
+onoff {
+    content: check-box(attribute, value,
+                       label, "On", 
+                       unchecked-value, "false", 
+                       checked-value, "true");
+}
+
+yesno {
+    content: check-box(label, "Yes", 
+                       unchecked-value, "no", 
+                       checked-value, "yes");
+}
+
+disabled {
+    content: check-box(attribute, value,
+                       label, "Disabled", 
+                       checked-value, "disabled",
+		       remove-value, yes);
+}
+
+hidden {
+    content: check-box(label, "Hidden", 
+                       checked-value, "hidden",
+		       remove-value, yes);
+}
+
+rgb1 {
+    content: combo-box(attribute, value);
+}
+
+rgb2 {
+    content: combo-box(labels, "Green\A Blue\A Red",
+                       values, "green\A blue\A red");
+}
+
+integer1 {
+    content: text-field(attribute, value,
+                        columns, 10);
+}
+
+integer2 {
+    content: text-field(columns, 10);
+}
+
+uri1 {
+    content: file-name-field(attribute, value,
+                             columns, 20, 
+                             font-family, monospaced);
+}
+
+uri2 {
+    content: file-name-field(absolute, yes,
+                             directory, yes,
+                             save, yes,
+                             url, yes,
+                             columns, 60, 
+                             font-family, monospaced);
+}
+
+fileName {
+    content: file-name-field(absolute, yes,
+                             directory, yes,
+                             save, yes,
+                             url, no,
+                             font-family, monospaced);
+}
+
+string1 {
+    content: text-area(attribute, value,
+                       columns, 40,
+                       rows, 2,
+                       wrap, word);
+}
+
+string1[rows][columns] {
+    content: text-area(attribute, value,
+                       columns, attr(columns),
+                       rows, attr(rows),
+                       wrap, word);
+}
+
+string2 {
+    content: text-area(columns, 40,
+                       wrap, line);
+}
+
+cymk1 {
+    content: list(attribute, value,
+                  labels, "Cyan\A Yellow\A Magenta\A Black");
+}
+
+cymk2 {
+    content: list(rows, 3);
+}
+
+cymklist1 {
+    content: list(attribute, value,
+                  labels, "Cyan\A Yellow\A Magenta\A Black",
+                  values, "cyan\A yellow\A magenta\A black",
+                  selection, multiple,
+                  separator, ",");
+}
+
+cymklist2 {
+    content: list(rows, 3, 
+                  selection, multiple);
+}
+
+cymka {
+    content: radio-buttons(attribute, value,
+                           labels, "Cyan\A Yellow\A Magenta\A Black");
+}
+
+cymkb {
+    content: radio-buttons(rows, 2);
+}
+/*
+cymkb {
+    content: combo-box();
+}
+*/
+
+cymklista {
+    content: radio-buttons(attribute, value,
+                           labels, "Cyan\A Yellow\A Magenta\A Black",
+                           values, "cyan\A yellow\A magenta\A black",
+                           selection, multiple,
+                           separator, ",");
+}
+
+cymklistb {
+    content: radio-buttons(columns, 2, 
+                           selection, multiple);
+}
+
+date1 {
+    content: date-field(attribute, value,
+	                data-type, date,
+                        language, en, 
+                        country, "US");
+}
+
+/* Default data-type is date */
+date2 {
+    content: date-field(pattern, "d MMMMMMMMM yyyy",
+                        language, en, 
+                        country, "US");
+}
+
+time1 {
+    content: date-field(attribute, value,
+                        data-type, time,
+                        language, en, 
+                        country, "US");
+}
+
+time2 {
+    content: date-field(data-type, time,
+                        language, en, 
+                        country, "US");
+}
+
+dateTime1 {
+    content: date-field(attribute, value,
+                        data-type, dateTime,
+                        language, en, 
+                        country, "US");
+}
+
+dateTime2 {
+    content: date-field(pattern, "yy/MM/dd hh:mm a Z",
+                        data-type, dateTime,
+                        language, en, 
+                        country, "US");
+}
+
+day1 {
+    content: date-field(attribute, value,
+                        data-type, gDay,
+                        language, en, 
+                        country, "US");
+}
+
+day2 {
+    content: date-field(data-type, gDay,
+                        language, en, 
+                        country, "US");
+}
+
+monthDay1 {
+    content: date-field(attribute, value,
+                        pattern, "dd MMMM",
+                        data-type, gMonthDay,
+                        language, en, 
+                        country, "US");
+}
+
+monthDay2 {
+    content: date-field(data-type, gMonthDay,
+                        language, en, 
+                        country, "US");
+}
+
+month1 {
+    content: date-field(attribute, value,
+                        data-type, gMonth,
+                        language, en, 
+                        country, "US");
+}
+
+month2 {
+    content: date-field(data-type, gMonth,
+                        language, en, 
+                        country, "US");
+}
+
+yearMonth1 {
+    content: date-field(attribute, value,
+                        data-type, gYearMonth,
+                        language, en, 
+                        country, "US");
+}
+
+yearMonth2 {
+    content: date-field(data-type, gYearMonth,
+                        language, en, 
+                        country, "US");
+}
+
+year1 {
+    content: date-field(attribute, value,
+                        data-type, gYear,
+                        language, en, 
+                        country, "US");
+}
+
+year2 {
+    content: date-field(data-type, gYear,
+                        language, en, 
+                        country, "US");
+}
+
+byte1 {
+    content: number-field(attribute, value,
+                          data-type, byte,
+                          language, en, 
+                          country, "US");
+}
+
+byte2 {
+    content: number-field(data-type, byte,
+                          language, en, 
+                          country, "US");
+}
+
+short1 {
+    content: number-field(attribute, value,
+                          data-type, short,
+                          language, en, 
+                          country, "US");
+}
+
+short2 {
+    content: number-field(data-type, short,
+                          language, en, 
+                          country, "US");
+}
+
+int1 {
+    content: number-field(attribute, value,
+                          data-type, int,
+                          language, en, 
+                          country, "US");
+}
+
+int2 {
+    content: number-field(data-type, int,
+                          language, en, 
+                          country, "US");
+}
+
+long1 {
+    content: number-field(attribute, value,
+                          data-type, long,
+                          language, en, 
+                          country, "US");
+}
+
+long2 {
+    content: number-field(data-type, long,
+                          language, en, 
+                          country, "US");
+}
+
+float1 {
+    content: number-field(attribute, value,
+                          data-type, float,
+                          language, en, 
+                          country, "US");
+}
+
+float2 {
+    content: number-field(data-type, float,
+                          language, en, 
+                          country, "US");
+}
+
+/* Default data-type is double */
+double1 {
+    content: number-field(attribute, value,
+                          pattern, "0.0#####",
+                          language, en, 
+                          country, "US");
+}
+
+double2 {
+    content: number-field(data-type, double,
+                          pattern, "0.0#####",
+                          language, en, 
+                          country, "US");
+}
+
+byteA {
+    content: spinner(attribute, value,
+                     data-type, byte);
+}
+
+byteE {
+    content: spinner(data-type, byte,
+                     step, 2);
+}
+
+shortA {
+    content: spinner(attribute, value,
+                     data-type, short,
+                     min, 0,
+                     language, en, 
+                     country, "US");
+}
+
+shortE {
+    content: spinner(data-type, short,
+                     max, 0,
+                     language, en, 
+                     country, "US");
+}
+
+intA {
+    content: spinner(attribute, value,
+                     data-type, int,
+                     min, 0,
+                     max, 100,
+                     step, 10,
+                     language, en, 
+                     country, "US");
+}
+
+intE {
+    content: spinner(data-type, int,
+                     columns, 5,
+                     language, en, 
+                     country, "US");
+}
+
+longA {
+    content: spinner(attribute, value,
+                     data-type, long,
+                     min, 1, max, 0, /* error ==> no bounds. */
+                     language, en, 
+                     country, "US"); 
+}
+
+longE {
+    content: spinner(data-type, long,
+                     language, en, 
+                     country, "US");
+}
+
+floatA {
+    content: spinner(attribute, value,
+                     data-type, float,
+                     pattern, "0.0##",
+                     language, fr, 
+                     country, "FR");
+}
+
+floatE {
+    content: spinner(data-type, float,
+                     pattern, "0.0##",
+                     language, fr, 
+                     country, "FR");
+}
+
+/* Default data-type is double */
+doubleA {
+    content: spinner(attribute, value,
+                     pattern, "0.00####",
+                     language, en, 
+                     country, "US");
+}
+
+doubleE {
+    content: spinner(pattern, "0.00####",
+                     min, 0, 
+                     max, 1, 
+                     step 0.01,
+                     language, en, 
+                     country, "US");
+}
+
+/* Standard format */
+
+dateTime30 {
+    content: date-time-picker(attribute, value,
+                              format, standard,
+                              columns, 25);
+}
+
+dateTime40 {
+    content: date-time-picker(format, standard);
+}
+
+/* Standard format, omit time zone */
+
+time30 {
+    content: time-picker(attribute, value,
+                         format, standard-omit-time-zone);
+}
+
+time40 {
+    content: time-picker();
+}
+
+date30 {
+    content: date-picker(attribute, value);
+}
+
+date40 {
+    content: date-picker(format, standard-omit-time-zone);
+}
+
+/* Custom format */
+
+dateTime31 {
+    content: date-time-picker(attribute, value,
+                              format, pattern,
+                              pattern, "HHmm MM/dd/yyyy",
+                              language, en, 
+                              country, "US");
+}
+
+dateTime41 {
+    content: date-time-picker(format, pattern,
+                              pattern, "HHmm MM/dd/yyyy",
+                              language, en, 
+                              country, "US");
+}
+
+time31 {
+    content: time-picker(attribute, value,
+                         format, pattern,
+                         pattern, "HHmm",
+                         language, en, 
+                         country, "US");
+}
+
+time41 {
+    content: time-picker(format, pattern,
+                         pattern, "HHmm",
+                         language, en, 
+                         country, "US",
+                         columns, 10);
+}
+
+date31 {
+    content: date-picker(attribute, value,
+                         format, pattern,
+                         pattern, "MM/dd/yyyy",
+                         language, en, 
+                         country, "US");
+}
+
+date41 {
+    content: date-picker(format, pattern,
+                         pattern, "MM/dd/yyyy",
+                         language, en, 
+                         country, "US");
+}
+
+/* Seconds since Epoch */
+
+dateTime32 {
+    content: date-time-picker(attribute, value,
+                              format, seconds-since-epoch);
+}
+
+dateTime42 {
+    content: date-time-picker(format, seconds-since-epoch);
+}
+
+/* Milliseconds since Epoch */
+
+dateTime33 {
+    content: date-time-picker(attribute, value,
+                              format, millis-since-epoch,
+                              columns, 20);
+}
+
+dateTime43 {
+    content: date-time-picker(format, millis-since-epoch);
+}

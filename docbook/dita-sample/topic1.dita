@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/dtd/topic.dtd">
+<topic id="topic1">
+  <title>What is a topic?</title>
+
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>related-links</indexterm>
+
+        <indexterm>link</indexterm>
+
+        <indexterm>linktext</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+
+  <body>
+    <p>The <tt>topic</tt> element<indexterm>topic</indexterm> is the top-level
+    DITA element for a single-subject topic or article. Other top-level DITA
+    elements that are more content-specific are <xref
+    href="concept1.dita"><tt>concept</tt></xref><indexterm>concept</indexterm>,
+    <xref href="task1.dita"><tt>task</tt></xref><indexterm>task</indexterm>,
+    <xref
+    href="reference1.dita"><tt>reference</tt></xref><indexterm>reference</indexterm>,
+    and <xref
+    href="glossary.dita"><tt>glossary</tt></xref><indexterm>glossary</indexterm>.</p>
+
+    <p>The most basic elements resembles the XHTML elements<indexterm>Document
+    Type<indexterm>XHTML</indexterm></indexterm><indexterm>Document
+    Type<indexterm>HTML<index-see>Document
+    Type<indexterm>XHTML</indexterm></index-see></indexterm></indexterm>. The
+    paragraph element is also called <tt>p</tt>.</p>
+
+    <p>A paragraph can contain <i><tt>i</tt>
+    elements</i><indexterm>i</indexterm>, <b><tt>b</tt>
+    elements</b><indexterm>b</indexterm>, <tt>tt
+    elements</tt><indexterm>tt</indexterm>, among many other inline elements.
+    The element used to represent internal and external links is called
+    <tt>xref</tt><indexterm>xref</indexterm>. This element deserves having a
+    short tutorial on its own.</p>
+
+    <ul>
+      <li>The list element is called <tt>ul</tt><indexterm>ul</indexterm>. It
+      contains <tt>li</tt> elements<indexterm>li</indexterm>.</li>
+
+      <li>Second <tt>li</tt>.</li>
+
+      <li>Third <tt>li</tt>.<p>As expected, ordered lists are called
+      <tt>ol</tt><indexterm>ol</indexterm>:</p><ol>
+          <li>First <tt>li</tt>.</li>
+
+          <li>Second <tt>li</tt>.</li>
+
+          <li>Third <tt>li</tt>.<p>Suprisingly, <tt>dl</tt>
+          lists<indexterm>dl</indexterm> slightly differ from their XHTML
+          equivalent. The customary <tt>dt</tt><indexterm>dt</indexterm> and
+          <tt>dl</tt><indexterm>dl</indexterm> elements are wrapped in a
+          <tt>dlentry</tt> element<indexterm>dlentry</indexterm>.</p><dl>
+              <dlentry>
+                <dt>First <tt>dt</tt></dt>
+
+                <dd>First <tt>dd</tt>.</dd>
+              </dlentry>
+
+              <dlentry>
+                <dt>Second <tt>dt</tt></dt>
+
+                <dd>Second <tt>dd</tt>.</dd>
+              </dlentry>
+
+              <dlentry>
+                <dt>Third <tt>dt</tt></dt>
+
+                <dd>Third <tt>dd</tt>.</dd>
+              </dlentry>
+            </dl></li>
+        </ol></li>
+    </ul>
+
+    <p>Tables are different from XHTML's. What follows is a
+    <tt>simpletable</tt><indexterm>simpletable<index-see-also>table</index-see-also></indexterm>:</p>
+
+    <simpletable>
+      <sthead>
+        <stentry><p><tt>sthead</tt><indexterm>sthead</indexterm>/<tt>stentry</tt><indexterm>stentry</indexterm>
+        A</p></stentry>
+
+        <stentry><p>B</p></stentry>
+      </sthead>
+
+      <strow>
+        <stentry><p><tt>strow</tt><indexterm>sthead</indexterm>/<tt>stentry</tt><indexterm>stentry</indexterm>
+        A,1</p></stentry>
+
+        <stentry><p>B,1</p></stentry>
+      </strow>
+
+      <strow>
+        <stentry><p>A,2</p></stentry>
+
+        <stentry><p>B,2</p></stentry>
+      </strow>
+    </simpletable>
+
+    <p>Advanced tables are borrowed from CALS (AKA DocBook<indexterm>Document
+    Type<indexterm>DocBook</indexterm></indexterm>
+    table<indexterm>table<index-see-also>simpletable</index-see-also></indexterm>):</p>
+
+    <table>
+      <title>A CALS <tt>table</tt>.</title>
+
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry><p><tt>thead</tt><indexterm>thead</indexterm>/<tt>row</tt><indexterm>row</indexterm>/<tt>entry</tt><indexterm>entry</indexterm>
+            A</p></entry>
+
+            <entry><p>B</p></entry>
+          </row>
+        </thead>
+
+        <tbody>
+          <row>
+            <entry><p><tt>tbody</tt><indexterm>tbody</indexterm>/<tt>row</tt><indexterm>row</indexterm>/<tt>entry</tt><indexterm>entry</indexterm>
+            A,1</p></entry>
+
+            <entry><p>B,1</p></entry>
+          </row>
+
+          <row>
+            <entry><p>A,2</p></entry>
+
+            <entry><p>B,2</p></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+  </body>
+
+  <related-links>
+    <link href="concept1.dita">
+      <linktext>A related-links/link pointing to sample concept</linktext>
+    </link>
+
+    <link href="task1.dita">
+      <linktext/>
+    </link>
+
+    <link href="reference1.dita">
+      <linktext/>
+    </link>
+
+    <link href="glossary.dita">
+      <linktext>Glossary</linktext>
+    </link>
+
+    <link format="html" href="http://www.xmlmind.com/ditac/" scope="external">
+      <linktext>A related-links/link pointing to the "XMLmind DITA Converter"
+      web site</linktext>
+    </link>
+  </related-links>
+</topic>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN"
+"http://docs.oasis-open.org/dita/dtd/reference.dtd">
+<reference id="reference1">
+  <title>A sample reference</title>
+
+  <refbody>
+    <refsyn><cmdname>hostname</cmdname> [<option>-fs</option>]
+    [<varname>name-of-host</varname>]</refsyn>
+
+    <section><title>DESCRIPTION</title><p>The <cmdname>hostname</cmdname>
+    utility prints the name of the current host. The super-user can set the
+    <cmdname>hostname</cmdname> by supplying an
+    argument.</p><p>Options:</p><dl>
+        <dlentry>
+          <dt><option>-f</option></dt>
+
+          <dd>Include domain information in the printed name. This is the
+          default behavior. </dd>
+        </dlentry>
+
+        <dlentry>
+          <dt><option>-s</option></dt>
+
+          <dd>Trim off any domain information from the printed name. </dd>
+        </dlentry>
+      </dl></section>
+
+    <section><title>HISTORY</title><p>The <cmdname>hostname</cmdname> command
+    appeared in 4.2BSD.</p></section>
+  </refbody>
+
+  <related-links>
+    <link format="html" href="http://linux.die.net/man/" scope="external">
+      <linktext><cmdname>gethostname</cmdname>(3)</linktext>
+    </link>
+
+    <link format="html" href="http://linux.die.net/man/" scope="external">
+      <linktext><cmdname>scutil</cmdname>(8)</linktext>
+    </link>
+  </related-links>
+</reference>

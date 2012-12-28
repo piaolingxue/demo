@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<article>
+  <title>DocBook Table Support</title>
+
+  <sect1>
+    <title>Examples found in <citetitle>DocBook: The Definitive
+    Guide</citetitle></title>
+
+    <table frame="all">
+      <title>Sample Table</title>
+
+      <tgroup align="left" cols="5" colsep="1" rowsep="1">
+        <colspec colname="c1"/>
+
+        <colspec colname="c2"/>
+
+        <colspec colname="c3"/>
+
+        <colspec colname="c5" colnum="5"/>
+
+        <spanspec align="center" nameend="c2" namest="c1" spanname="hspan"/>
+
+        <spanspec align="center" nameend="c3" namest="c2" spanname="bspan"/>
+
+        <thead>
+          <row>
+            <entry spanname="hspan">Horizontal Span</entry>
+
+            <entry>a3</entry>
+
+            <entry>a4</entry>
+
+            <entry>a5</entry>
+          </row>
+        </thead>
+
+        <tfoot>
+          <row>
+            <entry>f1</entry>
+
+            <entry>f2</entry>
+
+            <entry>f3</entry>
+
+            <entry>f4</entry>
+
+            <entry>f5</entry>
+          </row>
+        </tfoot>
+
+        <tbody>
+          <row>
+            <entry>b1</entry>
+
+            <entry>b2</entry>
+
+            <entry>b3</entry>
+
+            <entry>b4</entry>
+
+            <entry morerows="1" valign="middle"><para><!--Pernicous Mixed Content-->
+            Vertical Span</para></entry>
+          </row>
+
+          <row>
+            <entry>c1</entry>
+
+            <entry morerows="1" spanname="bspan" valign="bottom">Span
+            Both</entry>
+
+            <entry>c4</entry>
+          </row>
+
+          <row>
+            <entry>d1</entry>
+
+            <entry>d4</entry>
+
+            <entry>d5</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+
+    <informaltable frame="none">
+      <tgroup cols="2">
+        <colspec colwidth="0.5in"/>
+
+        <colspec colwidth="0.5in"/>
+
+        <tbody>
+          <row>
+            <entry>1</entry>
+
+            <entry>1</entry>
+          </row>
+
+          <row>
+            <entry>2</entry>
+
+            <entry>4</entry>
+          </row>
+
+          <row>
+            <entry>3</entry>
+
+            <entry>9</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <informaltable frame="all">
+      <tgroup cols="3">
+        <tbody>
+          <row>
+            <entry>a1</entry>
+
+            <entry>b1</entry>
+
+            <entry>c1</entry>
+          </row>
+
+          <row>
+            <entry>a2</entry>
+
+            <entrytbl cols="3">
+              <tbody>
+                <row>
+                  <entry>b2a1</entry>
+
+                  <entry>b2b1</entry>
+
+                  <entry>b2c1</entry>
+                </row>
+
+                <row>
+                  <entry>b2a2</entry>
+
+                  <entry>b2b2</entry>
+
+                  <entry>b2c2</entry>
+                </row>
+
+                <row>
+                  <entry>b2a3</entry>
+
+                  <entry>b2b3</entry>
+
+                  <entry>b2c3</entry>
+                </row>
+              </tbody>
+            </entrytbl>
+
+            <entry>c2</entry>
+          </row>
+
+          <row>
+            <entry>a3</entry>
+
+            <entry>b3</entry>
+
+            <entry>c3</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+
+  <sect1>
+    <title>More examples</title>
+
+    <informaltable>
+      <tgroup cols="4">
+        <colspec colname="1"/>
+
+        <colspec colname="2"/>
+
+        <colspec colname="3"/>
+
+        <colspec colname="4"/>
+
+        <tbody>
+          <row>
+            <entry>1,1</entry>
+
+            <entry nameend="3" namest="2">1,2</entry>
+
+            <entry>1,1</entry>
+          </row>
+
+          <row>
+            <entry morerows="1" nameend="2" namest="1">2,2</entry>
+
+            <entry morerows="2">3,1</entry>
+
+            <entry>1,1</entry>
+          </row>
+
+          <row>
+            <entry>1,1 (Deleting this column will not remove this cell because
+            it would make the row empty.)</entry>
+          </row>
+
+          <row>
+            <entry>1,1</entry>
+
+            <entry>1,1</entry>
+
+            <entry>1,1</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <informaltable rowsep="1">
+      <tgroup align="center" cols="8">
+        <colspec colname="1" colwidth="2*"/>
+
+        <colspec colname="2" colwidth="3*"/>
+
+        <tbody>
+          <row>
+            <entry align="left" nameend="2" namest="1">LES VINS</entry>
+
+            <entry>1970</entry>
+
+            <entry>1971</entry>
+
+            <entry>1972</entry>
+
+            <entry>1973</entry>
+
+            <entry>1974</entry>
+
+            <entry>1975</entry>
+          </row>
+
+          <row>
+            <entry align="center" nameend="2" namest="1">Champagne</entry>
+
+            <entry>15B</entry>
+
+            <entry>16B</entry>
+
+            <entry>11B</entry>
+
+            <entry>16B</entry>
+
+            <entry>8B</entry>
+
+            <entry>17A</entry>
+          </row>
+
+          <row>
+            <entry align="center" nameend="2" namest="1">Alsace</entry>
+
+            <entry>15B</entry>
+
+            <entry>19A</entry>
+
+            <entry>6B</entry>
+
+            <entry>14B</entry>
+
+            <entry>12B</entry>
+
+            <entry>17B</entry>
+          </row>
+
+          <row>
+            <entry morerows="1">Bourgogne</entry>
+
+            <entry>Rouge</entry>
+
+            <entry>14B</entry>
+
+            <entry>18A</entry>
+
+            <entry>12B</entry>
+
+            <entry>13B</entry>
+
+            <entry>12B</entry>
+
+            <entry>-</entry>
+          </row>
+
+          <row>
+            <entry>Blanc</entry>
+
+            <entry>16B</entry>
+
+            <entry>17B</entry>
+
+            <entry>9B</entry>
+
+            <entry>13B</entry>
+
+            <entry>15B</entry>
+
+            <entry>14B</entry>
+          </row>
+
+          <row>
+            <entry morerows="2">Bordeaux</entry>
+
+            <entry>Rouge</entry>
+
+            <entry>19A</entry>
+
+            <entry>17B</entry>
+
+            <entry>8B</entry>
+
+            <entry>11B</entry>
+
+            <entry>9B</entry>
+
+            <entry>19A</entry>
+          </row>
+
+          <row>
+            <entry>Blanc</entry>
+
+            <entry>19B</entry>
+
+            <entry>14B</entry>
+
+            <entry>7B</entry>
+
+            <entry>12B</entry>
+
+            <entry>15B</entry>
+
+            <entry>17B</entry>
+          </row>
+
+          <row>
+            <entry>Liquoreux</entry>
+
+            <entry>18A</entry>
+
+            <entry>17A</entry>
+
+            <entry>5B</entry>
+
+            <entry>6B</entry>
+
+            <entry>5B</entry>
+
+            <entry>18A</entry>
+          </row>
+
+          <row>
+            <entry morerows="1">Loire</entry>
+
+            <entry>Rouge</entry>
+
+            <entry>17B</entry>
+
+            <entry>17B</entry>
+
+            <entry>7B</entry>
+
+            <entry>12B</entry>
+
+            <entry>8B</entry>
+
+            <entry>17A</entry>
+          </row>
+
+          <row>
+            <entry>Blanc</entry>
+
+            <entry>17B</entry>
+
+            <entry>17B</entry>
+
+            <entry>7B</entry>
+
+            <entry>13B</entry>
+
+            <entry>7B</entry>
+
+            <entry>18A</entry>
+          </row>
+
+          <row>
+            <entry morerows="1">Rhône</entry>
+
+            <entry><emphasis>Septentrionnaux</emphasis></entry>
+
+            <entry>15B</entry>
+
+            <entry>15B</entry>
+
+            <entry>16B</entry>
+
+            <entry>13B</entry>
+
+            <entry>8B</entry>
+
+            <entry>5B</entry>
+          </row>
+
+          <row>
+            <entry><emphasis>Méridionnaux</emphasis></entry>
+
+            <entry>14B</entry>
+
+            <entry>16B</entry>
+
+            <entry>10B</entry>
+
+            <entry>12B</entry>
+
+            <entry>9B</entry>
+
+            <entry>8B</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+  </sect1>
+
+  <sect1>
+    <title>DocBook 4.3 supports both HTML and CALS tables</title>
+
+    <note>
+      <para>The only limitation in XMLmind XML Editor is that mixing both HTML
+      and CALS content models in the same <literal>table</literal> or
+      <literal>informaltable</literal> is <emphasis>absolutely not
+      supported</emphasis> by table rendering code and by table editing
+      commands, even if this is allowed according to the DTD V4.3.</para>
+
+      <para>Example 1: an <literal>informaltable</literal> contains
+      <literal>tr</literal> child elements. In such case, the
+      <literal>informaltable</literal> is an HTML table. Setting attribute
+      <literal>frame</literal> to <literal>topbot</literal> on this
+      <literal>informaltable</literal> will have absolutely no visual
+      effect.</para>
+
+      <para>Example 2: a <literal>table</literal> has a child
+      <literal>tgroup</literal> element which itself contains a
+      <literal>tbody</literal> with
+      <literal>row</literal>/<literal>entry</literal> descendants. In such
+      case, the <literal>table</literal> is a CALS table. Adding a
+      <literal>thead</literal> having
+      <literal>tr</literal>/<literal>td</literal> descendants before the
+      <literal>tbody</literal> of the <literal>tgroup</literal> would lead to
+      catastrophic results. Fortunately, the DocBook configuration of XMLmind
+      XML Editor makes it hard to do this unintentionally.</para>
+    </note>
+
+    <para>The following examples, taken from the <ulink
+    url="http://www.w3.org/TR/html401">HTML 4.01 specification</ulink>, are
+    also found in the companion demo file <ulink
+    url="xhtml-table.xhtml">xhtml-table.xhtml</ulink>.</para>
+
+    <table border="1"
+           summary="this table gives some statistics about fruit                    flies: average height and weight, and percentage                    with red eyes (for both males and females).">
+      <caption>A test table with merged cells</caption>
+
+      <tr>
+        <th rowspan="2"/>
+
+        <th colspan="2">Average</th>
+
+        <th rowspan="2">Red Eyes</th>
+      </tr>
+
+      <tr>
+        <th>Height</th>
+
+        <th>Weight</th>
+      </tr>
+
+      <tr>
+        <th>Males</th>
+
+        <td>1.9</td>
+
+        <td>0.003</td>
+
+        <td>40%</td>
+      </tr>
+
+      <tr>
+        <th>Females</th>
+
+        <td>1.7</td>
+
+        <td>0.002</td>
+
+        <td>43%</td>
+      </tr>
+    </table>
+
+    <para>Another test table with merged cells.</para>
+
+    <informaltable border="1">
+      <tr>
+        <td>1,1</td>
+
+        <td colspan="2">1,2</td>
+
+        <td>1,1</td>
+      </tr>
+
+      <tr>
+        <td colspan="2" rowspan="2">2,2</td>
+
+        <td rowspan="3">3,1</td>
+
+        <td>1,1</td>
+      </tr>
+
+      <tr>
+        <td>1,1(Deleting this column will not remove this cell because it
+        would make the row empty.)</td>
+      </tr>
+
+      <tr>
+        <td>1,1</td>
+
+        <td>1,1</td>
+
+        <td>1,1</td>
+      </tr>
+    </informaltable>
+
+    <informaltable border="1" cellpadding="5" cellspacing="2"
+                   summary="History courses offered in the community of            Bath arranged by course name, tutor, summary,             code, and fee">
+      <tr>
+        <th colspan="5" scope="colgroup">Community Courses &mdash; Bath Autumn
+        1997</th>
+      </tr>
+
+      <tr>
+        <th abbr="Name" scope="col">Course Name</th>
+
+        <th abbr="Tutor" scope="col">Course Tutor</th>
+
+        <th scope="col">Summary</th>
+
+        <th scope="col">Code</th>
+
+        <th scope="col">Fee</th>
+      </tr>
+
+      <tr valign="middle">
+        <td scope="row">After the Civil War</td>
+
+        <td>Dr. John Wroughton</td>
+
+        <td>The course will examine the turbulent years in England after 1646.
+        <emphasis>6 weekly meetings starting Monday 13th
+        October.</emphasis></td>
+
+        <td>H27</td>
+
+        <td>£32</td>
+      </tr>
+
+      <tr valign="middle">
+        <td scope="row">An Introduction to Anglo-Saxon England</td>
+
+        <td>Mark Cottle</td>
+
+        <td>One day course introducing the early medieval period
+        reconstruction the Anglo-Saxons and their society. <emphasis>Saturday
+        18th October.</emphasis></td>
+
+        <td>H28</td>
+
+        <td>£18</td>
+      </tr>
+
+      <tr valign="middle">
+        <td scope="row">The Glory that was Greece</td>
+
+        <td>Valerie Lorenz</td>
+
+        <td>Birthplace of democracy, philosophy, heartland of theater, home of
+        argument. The Romans may have done it but the Greeks did it first.
+        <emphasis>Saturday day school 25th October 1997</emphasis></td>
+
+        <td>H30</td>
+
+        <td>£18</td>
+      </tr>
+    </informaltable>
+
+    <table border="2" frame="hsides" rules="groups"
+           summary="Code page support in different versions of MS Windows.">
+      <caption>Code-Page Support In Microsoft Windows</caption>
+
+      <colgroup align="center"/>
+
+      <colgroup align="left" width="2*"/>
+
+      <colgroup align="center" span="2" width="0*"/>
+
+      <colgroup align="center" span="3"/>
+
+      <thead valign="top">
+        <tr>
+          <th>Code-Page ID</th>
+
+          <th>Name</th>
+
+          <th>ACP</th>
+
+          <th>OEMCP</th>
+
+          <th>Windows NT 3.1</th>
+
+          <th>Windows NT 3.51</th>
+
+          <th>Windows 95</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1200</td>
+
+          <td>Unicode (BMP of ISO/IEC-10646)</td>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>*</td>
+        </tr>
+
+        <tr>
+          <td>1250</td>
+
+          <td>Windows 3.1 Eastern European</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1251</td>
+
+          <td>Windows 3.1 Cyrillic</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1252</td>
+
+          <td>Windows 3.1 US (ANSI)</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1253</td>
+
+          <td>Windows 3.1 Greek</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1254</td>
+
+          <td>Windows 3.1 Turkish</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1255</td>
+
+          <td>Hebrew</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1256</td>
+
+          <td>Arabic</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1257</td>
+
+          <td>Baltic</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1361</td>
+
+          <td>Korean (Johab)</td>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td>**</td>
+
+          <td>X</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>437</td>
+
+          <td>MS-DOS United States</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>708</td>
+
+          <td>Arabic (ASMO 708)</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>709</td>
+
+          <td>Arabic (ASMO 449+, BCON V4)</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>710</td>
+
+          <td>Arabic (Transparent Arabic)</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>720</td>
+
+          <td>Arabic (Transparent ASMO)</td>
+
+          <td/>
+
+          <td>X</td>
+
+          <td/>
+
+          <td/>
+
+          <td>X</td>
+        </tr>
+      </tbody>
+    </table>
+  </sect1>
+</article>

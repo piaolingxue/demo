@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd">
+<chapter id="c1">
+  <title>Other example</title>
+
+  <section id="navigating">
+    <title>Navigating between referencing document and referenced
+    document</title>
+
+    <para>If you are editing <filename>docbook-modular-book.xml</filename> and
+    now want to edit <filename>chapter.xml</filename>, click anywhere in this
+    chapter and then use <menuchoice>
+        <guimenu>Edit</guimenu>
+
+        <guisubmenu>Reference</guisubmenu>
+
+        <guimenuitem>Edit Referenced Document</guimenuitem>
+      </menuchoice> (<keycombo>
+        <keycap>Ctrl</keycap>
+
+        <keycap>Shift</keycap>
+
+        <keycap>E</keycap>
+      </keycombo> or use icon <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="editInclusionAction.png"/>
+        </imageobject>
+      </inlinemediaobject> found at the right of the node path bar).</para>
+
+    <para>If, on the contrary you are editing <filename>chapter.xml</filename>
+    and want to go back to master document
+    <filename>docbook-modular-book.xml</filename>, use <menuchoice>
+        <guimenu>Edit</guimenu>
+
+        <guisubmenu>Reference</guisubmenu>
+
+        <guimenuitem>Edit Referencing Document</guimenuitem>
+      </menuchoice> (<keycombo>
+        <keycap>Ctrl</keycap>
+
+        <keycap>Shift</keycap>
+
+        <keycap>B</keycap>
+      </keycombo> or use icon <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="editIncludingAction.png"/>
+        </imageobject>
+      </inlinemediaobject> found at the right of the node path bar).</para>
+
+    <para>Note that this chapter contains itself references to two external
+    documents:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para><ulink url="section1.xml">section1.xml</ulink>,</para>
+      </listitem>
+
+      <listitem>
+        <para><ulink url="section2.xml">section2.xml</ulink>,</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>which in turn, both reference ``XML variables'' ("<xi:include
+    href="glossary.xml" xpointer="XXE"
+    xmlns:xi="http://www.w3.org/2001/XInclude"/>" and "<xi:include
+    href="glossary.xml" xpointer="XFC"
+    xmlns:xi="http://www.w3.org/2001/XInclude"/>") defined in <ulink
+    url="glossary.xml">glossary.xml</ulink>.</para>
+  </section>
+
+  <xi:include href="section1.xml" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <xi:fallback>
+      <section>
+        <title>Not Found!</title>
+
+        <para>File <filename>section1.xml</filename> is not found.</para>
+      </section>
+    </xi:fallback>
+  </xi:include>
+
+  <xi:include href="section2.xml" xpointer="element(s2)"
+              xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>

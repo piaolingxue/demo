@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<section version="5.0" xml:id="noteworthy_elements"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:htm="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Noteworthy elements</title>
+
+  <para>In DocBook 5 (see <link
+  xlink:href="http://www.docbook.org/tdg5/">DocBook 5.0: The Definitive
+  Guide</link>), two elements with the <emphasis>same name</emphasis> having
+  the <emphasis>same parent</emphasis> element may have <emphasis>different
+  content models</emphasis>. This is the case for <tag
+  class="element">indexterm</tag> and <tag
+  class="element">imagedata</tag>.</para>
+
+  <para>Other elements are less exotic because their content models are
+  contextual, that is, they depend on their parent elements.</para>
+
+  <para>Example 1: this paragraph contains the <emphasis>usual, full-fledged,
+  emphasis child element</emphasis> (called
+  "<literal>emphasis (db.emphasis)</literal>" in <link
+  xlink:href="http://www.docbook.org/tdg5/">DocBook 5.0: The Definitive
+  Guide</link>).</para>
+
+  <para><inlinemediaobject>
+      <imageobject>
+        <imagedata fileref="images/action.png"></imagedata>
+      </imageobject>
+    </inlinemediaobject> Please click inside word
+  "<emphasis>emphasis</emphasis>" in the above example and use <menuchoice>
+      <guimenu>Help</guimenu>
+
+      <guimenuitem>Show Content Model</guimenuitem>
+    </menuchoice> (<keycombo>
+      <keycap>Shift</keycap>
+
+      <keycap>F1</keycap>
+    </keycombo>) to display the content model of the full-fledged <tag
+  class="element">emphasis</tag> element.</para>
+
+  <para>Example 2: <inlineequation>
+      <mathphrase>this inlineequation contains a mathphrase which contains
+      <emphasis>a limited emphasis child element</emphasis></mathphrase>
+    </inlineequation> (called "<literal>emphasis (db._emphasis)</literal>" in
+  <link xlink:href="http://www.docbook.org/tdg5/">DocBook 5.0: The Definitive
+  Guide</link>).</para>
+
+  <para><inlinemediaobject>
+      <imageobject>
+        <imagedata fileref="images/action.png"></imagedata>
+      </imageobject>
+    </inlinemediaobject> Please click inside word
+  "<emphasis>emphasis</emphasis>" in the above example and use <menuchoice>
+      <guimenu>Help</guimenu>
+
+      <guimenuitem>Show Content Model</guimenuitem>
+    </menuchoice> (<keycombo>
+      <keycap>Shift</keycap>
+
+      <keycap>F1</keycap>
+    </keycombo>) to display the content model of the limited <tag
+  class="element">emphasis</tag> element.</para>
+
+  <xi:include href="indexterm.xml" xpointer="element(/1)" />
+
+  <xi:include href="imagedata.xml" xpointer="element(/1)" />
+</section>

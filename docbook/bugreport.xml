@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/css" href="bugreport/bugreport.css"?>
+<?xml-stylesheet type="text/css" href="bugreport/xmldata.css" alternate="yes"?>
+<bugReports xsi:schemaLocation="http://www.xmlmind.com/xmleditor/schema/bugreport bugreport/bugreport.xsd"
+            xmlns="http://www.xmlmind.com/xmleditor/schema/bugreport"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:xh11d="http://www.w3.org/1999/xhtml/datatypes/"
+            xmlns:ns="http://www.xmlmind.com/xmleditor/schema/bugreport"
+            xmlns:html="http://www.w3.org/1999/xhtml"
+            xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty">
+  <comments>
+    <html:div>This demonstration document does not use a XXE configuration to
+    specify its style sheet. Instead, it directly references bugreport.css
+    using a &lt;?xml-stylesheet?&gt; processing instruction. Therefore if you
+    want to see this document properly styled, do not turn on option
+    "<html:b>Ignore &lt;?xml-stylesheet?&gt;</html:b>"
+    (<html:b>Options</html:b>|<html:b>Preferences</html:b>,
+    <html:b>Open</html:b> section).</html:div>
+  </comments>
+
+  <bugReport>
+    <product>XXE</product>
+
+    <version>2.2</version>
+
+    <platform>
+      <windows2000/>
+    </platform>
+
+    <javaRuntime>1.4.1_02</javaRuntime>
+
+    <submittedBy>martin@martin.co.cz</submittedBy>
+
+    <date>2003-03-31</date>
+
+    <description>
+      <html:div><html:p>When extending selection to previous word using
+      <html:tt>Ctrl+Shift+Left</html:tt> XXE selects more characters than
+      expected.</html:p><html:p>Example: <html:tt>^</html:tt> is the caret,
+      <html:tt>||</html:tt> is the text selection shown before and after
+      pressing <html:tt>Ctrl+Shift+Left</html:tt>.</html:p><html:p>This is
+      what is expected</html:p><html:pre>...previous word...
+                ^
+...previous word...
+            ^
+            |   |</html:pre><html:p>This is what XXE do:</html:p><html:pre>...previous word...
+                ^
+...previous word...
+   ^
+   |            |</html:pre><html:p>Extending selection to the right using
+      <html:tt>Ctrl+Shift+Right</html:tt> works properly.</html:p></html:div>
+    </description>
+  </bugReport>
+</bugReports>

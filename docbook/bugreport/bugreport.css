@@ -1,0 +1,187 @@
+@namespace "http://www.w3.org/1999/xhtml";
+@import url(xxe-config:xhtml/css/xhtml.css);
+
+@namespace br url(http://www.xmlmind.com/xmleditor/schema/bugreport);
+
+br|bugReports {
+   display: block;
+}
+
+br|comments {
+    display: block;
+    font-size: smaller;
+    background-color: #FFFFF0;
+    border: 1 solid gray;
+    padding: 2;
+    margin: 5;
+}
+
+br|bugReport {
+    display: block;
+    collapsible: yes;
+    background: white url(bluegrad.png) repeat-x;
+    border: thin solid #BBDAEE;
+    margin-bottom: 1.33ex;
+}
+
+br|bugReport:before {
+    display: block;
+    content: " " collapser(collapsed-icon, icon(pop-right), 
+                           expanded-icon, icon(pop-down)) 
+             " Bug Report " 
+             insert-same-after-button(icon, icon(plus),
+                                      tool-tip, "Add another bug report") 
+             " "
+             delete-button(tool-tip, "Delete this bug report");
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+    background-color: #2020A0;
+    padding: 0.25ex;
+    margin-top: 1.33ex;
+}
+
+br|product,
+br|version,
+br|platform,
+br|javaRuntime,
+br|submittedBy,
+br|date,
+br|description,
+br|workaround {
+    display: block;
+    border: 1 solid gray;
+    padding: 2;
+    margin-top: 5;
+    margin-bottom: 5;
+    margin-right: 5;
+    margin-left: 16ex;
+    background-color: white;
+}
+
+br|description,
+br|workaround {
+    background-color: #FFFFF0;
+}
+
+br|product:before,
+br|version:before,
+br|platform:before,
+br|javaRuntime:before,
+br|submittedBy:before,
+br|date:before,
+br|description:before,
+br|workaround:before {
+    display: marker;
+    content: element-label();
+    font-weight: bold;
+    color: #0000A0;
+}
+
+br|platform > br|* {
+    display: block;
+}
+
+br|platform > br|*:before {
+    display: inline;
+    content: element-label() " " replace-button(icon, icon(pop-down)) " ";
+    font-weight: bold;
+    color: #0000A0;
+}
+
+br|version,
+br|submittedBy,
+br|date {
+    border: 0;
+    color: #0000A0;
+    background-color: transparent;
+}
+
+br|version {
+    content: paragraph(content(text-field(columns, 10,
+	                                  background-color, white,
+                                          color, black),
+                               " (examples: 2.0p1, 2.2, 3.0b1)"));
+}
+
+br|submittedBy {
+    content: paragraph(content(text-field(columns, 20,
+	                                  background-color, white,
+                                          color, black),
+                               " (email like smith@acme.com)"));
+}
+
+br|date {
+    content: paragraph(content(date-picker(format, standard-omit-time-zone,
+	                                   background-color, white,
+                                           color, black),
+                               " (yyyy-mm-dd)"));
+}
+
+br|date:after {
+    display: block;
+    content: division(content(command-button(icon, icon(right), 
+                            	             text, "Attach screen shot", 
+                                             command, "add",
+                                             parameter, "after {http://www.xmlmind.com/xmleditor/schema/bugreport}screenShot"), 
+                              drop-site(text, "or directly drop it here",
+					icon, url(drop.png),
+					icon-position, right,
+                                        command, "paste",
+                                        parameter, "after <?xml version='1.0'?><screenShot xmlns='http://www.xmlmind.com/xmleditor/schema/bugreport' image='%{url}'/>")));
+    color: #0000A0;
+    font-style: italic;
+    margin: 5;
+}
+
+br|description:after {
+    display: block;
+    content: command-button(icon, icon(right), 
+                            text, "Describe workaround", 
+                            command, "insert",
+                            parameter, "after {http://www.xmlmind.com/xmleditor/schema/bugreport}workaround");
+    color: #0000A0;
+    font-style: italic;
+    margin: 5;
+}
+
+br|screenShot {
+    display: block;
+    collapsible: yes;
+    not-collapsible-head: 1;
+    margin: 5;
+    border: 1 solid gray;
+    padding: 2;
+}
+
+br|screenShot:before {
+    display: inline;
+    content: division(content(paragraph(content(" ", 
+                                                collapser(collapsed-icon, 
+                                                          icon(pop-right), 
+                                                          expanded-icon, 
+                                                          icon(pop-down)),
+                                                " Screen shot ",
+                                                file-name-field(
+                                                       columns, 30,
+                                                       attribute, image, 
+                                                       font-weight, normal,
+	                                               background-color, white,
+                                                       color, black))),
+                              paragraph(image(attr(image)),
+                                        text-align, center,
+                                        margin-top, 5,
+                                        margin-bottom, 5),
+                              command-button(icon, icon(right), 
+                                             text, "Describe screen shot", 
+                                             command, "insert",
+                                             parameter, "into {http://www.xmlmind.com/xmleditor/schema/bugreport}description",
+			                     font-style, italic,
+                                             font-weight, normal)));
+    font-weight: bold;
+    color: #0000A0;
+}
+
+br|screenShot > br|description:after {
+    content: "";
+}

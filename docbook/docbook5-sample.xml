@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<article version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:mml="http://www.w3.org/1998/Math/MathML"
+         xmlns:htm="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>XMLmind XML Editor - DocBook 5 Support</title>
+
+    <author>
+      <personname><firstname>Hussein</firstname><surname>Shafie</surname></personname>
+
+      <affiliation>
+        <orgname>Pixware</orgname>
+
+        <address>Immeuble Capricorne,
+<street>23 rue Colbert</street>,
+<postcode>78180</postcode> <city>Montigny Le Bretonneux</city>,
+<country>France</country>,
+Phone: <phone>+33 (0)1 30 60 07 00</phone>,
+Fax: <fax>+33 (0)1 30 96 05 23</fax>,
+Web: <otheraddr><link xlink:href="http://www.xmlmind.com/xmleditor">www.xmlmind.com/xmleditor</link></otheraddr>
+Email: <email>xmleditor-support@xmlmind.com</email></address>
+      </affiliation>
+    </author>
+
+    <pubdate>March 17, 2011</pubdate>
+  </info>
+
+  <section version="5.0" xml:id="introduction">
+    <title>Introduction</title>
+
+    <para>In XMLmind XML Editor, the support of DocBook 5 (a RELAX NG schema)
+    is built on the top of the support of DocBook 4 (a DTD). That's why
+    everything described in <link
+    xlink:href="http://www.xmlmind.com/xmleditor/_distrib/doc/docbook/index.html"><citetitle>XMLmind
+    XML Editor - DocBook Support</citetitle></link> (also available using
+    <guimenu>Help</guimenu>|<guimenuitem>Help</guimenuitem>) also applies to
+    DocBook 5 documents.</para>
+
+    <para>This document quickly describes what is specific to DocBook
+    5.</para>
+  </section>
+
+  <xi:include href="docbook5-sample/noteworthy_elements.xml"
+              xpointer="element(noteworthy_elements)">
+    <xi:fallback>
+      <section>
+        <title>Not Found!</title>
+
+        <para>File
+        <filename>docbook5-sample/noteworthy_elements.xml</filename> is not
+        found.</para>
+      </section>
+    </xi:fallback>
+  </xi:include>
+</article>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
+"http://docs.oasis-open.org/dita/dtd/bookmap.dtd">
+<bookmap chunk="by-document">
+  <title>DITA sample topics and bookmap</title>
+
+  <bookmeta>
+    <authorinformation>
+      <personinfo>
+        <namedetails>
+          <personname>
+            <firstname>Hussein</firstname>
+
+            <lastname>Shafie</lastname>
+          </personname>
+        </namedetails>
+      </personinfo>
+
+      <organizationinfo>
+        <namedetails>
+          <organizationnamedetails>
+            <organizationname>Pixware</organizationname>
+          </organizationnamedetails>
+        </namedetails>
+
+        <addressdetails><thoroughfare>91, rue Gambetta</thoroughfare>
+<locality><postalcode>78120</postalcode> <localityname>Rambouillet</localityname></locality>
+<country>France</country></addressdetails>
+
+        <contactnumbers>
+          <contactnumber>Phone: +33 (0)1 30 59 81 44</contactnumber>
+        </contactnumbers>
+
+        <emailaddresses>
+          <emailaddress>ditac-support@xmlmind.com</emailaddress>
+        </emailaddresses>
+
+        <urls>
+          <url>www.xmlmind.com/ditac/</url>
+        </urls>
+      </organizationinfo>
+    </authorinformation>
+
+    <critdates>
+      <created date="September 20, 2009"/>
+    </critdates>
+  </bookmeta>
+
+  <frontmatter>
+    <booklists>
+      <toc chunk="to-content" copy-to="index.html"/>
+    </booklists>
+
+    <bookabstract chunk="to-content" href="dita-sample/readme.dita"
+                  navtitle="Select me and open me by clicking the &quot;Edit referenced topic&quot; icon in the tool bar"/>
+  </frontmatter>
+
+  <chapter chunk="to-content" href="dita-sample/topic1.dita"/>
+
+  <chapter chunk="to-content" href="dita-sample/task1.dita"/>
+
+  <chapter chunk="to-content" href="dita-sample/reference1.dita"/>
+
+  <appendix chunk="to-content" href="dita-sample/concept1.dita"/>
+
+  <backmatter>
+    <topichead chunk="to-content" navtitle="Glossary">
+      <topicref chunk="select-document" href="dita-sample/glossary.dita"
+                toc="no"/>
+    </topichead>
+
+    <booklists>
+      <indexlist chunk="to-content"/>
+    </booklists>
+  </backmatter>
+</bookmap>

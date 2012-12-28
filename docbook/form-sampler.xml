@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/css" href="form-sampler/form-sampler.css" 
+title="Stylesheet using combo-box(), check-box(), text-field(), etc" ?>
+<?xml-stylesheet type="text/css" href="form-sampler/form-sampler2.css" 
+alternate="yes" title="Stylesheet exclusively using value-editor()" ?>
+<doc xsi:schemaLocation="http://www.xmlmind.com/xmleditor/schema/form-sampler form-sampler/form-sampler.xsd"
+     xmlns="http://www.xmlmind.com/xmleditor/schema/form-sampler"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema"
+     xmlns:ns="http://www.xmlmind.com/xmleditor/schema/form-sampler">
+  <para>This demonstration document does not use a XXE configuration to
+  specify its style sheet. Instead, it directly references form-sampler.css
+  using a &lt;?xml-stylesheet?&gt; processing instruction. Therefore if you
+  want to see this document properly styled, do not turn on option
+  "<bold>Ignore &lt;?xml-stylesheet?&gt;</bold>"
+  (<bold>Options</bold>|<bold>Preferences</bold>, <bold>Open</bold>
+  section).</para>
+
+  <para><bold>Check box</bold> used to edit a boolean attribute:
+  <onoff /></para>
+
+  <para><bold>Check box</bold> used to edit an element with a yes/no value:
+  <yesno></yesno></para>
+
+  <para><bold>Check box</bold> used to add/remove a value to an attribute:
+  <disabled value="disabled" /></para>
+
+  <para><bold>Check box</bold> used to add/remove a value to an element:
+  <hidden>hidden</hidden></para>
+
+  <para><bold>Combo box</bold> used to edit an attribute specifying
+  red/green/blue: <rgb1 /></para>
+
+  <para><bold>Combo box</bold> used to edit an element specifying
+  red/green/blue: <rgb2></rgb2></para>
+
+  <para><bold>Text field</bold> used to edit an attribute specifying a 32-bit
+  signed integer: <integer1 /></para>
+
+  <para><bold>Text field</bold> used to edit an element specifying a 32-bit
+  signed integer: <integer2></integer2></para>
+
+  <para><bold>File name field</bold> used to edit an attribute specifying the
+  relative URL of an open file: <uri1 /></para>
+
+  <para><bold>File name field</bold> used to edit an element specifying the
+  absolute URL of a save directory: <uri2></uri2></para>
+
+  <para><bold>File name field</bold> used to edit an element specifying the
+  absolute path of a save directory: <fileName></fileName></para>
+
+  <para><bold>Text area</bold> used to edit an attribute containing a free
+  form string: <string1 columns="60" rows="6" /></para>
+
+  <para><bold>Text area</bold> used to edit an element containing a free form
+  string: <string2></string2></para>
+
+  <para>Single selection <bold>list</bold> used to edit an attribute
+  specifying cyan/yellow/magenta/black: <cymk1 value="yellow" /></para>
+
+  <para>Single selection <bold>list</bold> used to edit an element specifying
+  cyan/yellow/magenta/black: <cymk2>yellow</cymk2></para>
+
+  <para>Multiple selection <bold>list</bold> used to edit an attribute
+  specifying 1 or 2 colors separated by a comma, where allowed colors are
+  cyan/yellow/magenta/black: <cymklist1 /></para>
+
+  <para>Multiple selection <bold>list</bold> used to edit an element
+  specifying 0 to 4 colors, where allowed colors are
+  cyan/yellow/magenta/black: <cymklist2></cymklist2></para>
+
+  <para>Single selection <bold>radio button panel</bold> used to edit an
+  attribute specifying cyan/yellow/magenta/black: <cymka /></para>
+
+  <para>Single selection <bold>radio button panel</bold> used to edit an
+  element specifying cyan/yellow/magenta/black: <cymkb></cymkb></para>
+
+  <para>Multiple selection <bold>check box panel</bold> used to edit an
+  attribute specifying 1 or 2 colors separated by a comma, where allowed
+  colors are cyan/yellow/magenta/black: <cymklista /></para>
+
+  <para>Multiple selection <bold>check box panel</bold> used to edit an
+  element specifying 0 to 4 colors, where allowed colors are
+  cyan/yellow/magenta/black: <cymklistb></cymklistb></para>
+
+  <para><bold>Localized fields (en_US)</bold></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a date:
+  <date1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a date:
+  <date2></date2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a time:
+  <time1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a time:
+  <time2></time2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a date
+  and a time: <dateTime1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a date and
+  a time: <dateTime2></dateTime2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a day:
+  <day1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a day:
+  <day2></day2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a
+  month/day: <monthDay1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a
+  month/day: <monthDay2></monthDay2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a month:
+  <month1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a month:
+  <month2></month2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a
+  year/month: <yearMonth1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a
+  year/month: <yearMonth2></yearMonth2></para>
+
+  <para><bold>Date field</bold> used to edit an attribute specifying a year:
+  <year1 /></para>
+
+  <para><bold>Date field</bold> used to edit an element specifying a year:
+  <year2></year2></para>
+
+  <para><bold>Number field</bold> used to edit an attribute specifying a byte:
+  <byte1 /></para>
+
+  <para><bold>Number field</bold> used to edit an element specifying a byte:
+  <byte2></byte2></para>
+
+  <para><bold>Number field</bold> used to edit an attribute specifying a
+  short: <short1 /></para>
+
+  <para><bold>Number field</bold> used to edit an element specifying a short:
+  <short2></short2></para>
+
+  <para><bold>Number field</bold> used to edit an attribute specifying a int:
+  <int1 /></para>
+
+  <para><bold>Number field</bold> used to edit an element specifying a int:
+  <int2></int2></para>
+
+  <para><bold>Number field</bold> used to edit an attribute specifying a long:
+  <long1 /></para>
+
+  <para><bold>Number field</bold> used to edit an element specifying a long:
+  <long2></long2></para>
+
+  <para><bold>Number field</bold> used to edit an attribute specifying a
+  float: <float1 /></para>
+
+  <para><bold>Number field</bold> used to edit an element specifying a float:
+  <float2></float2></para>
+
+  <para><bold>Number field</bold> used to edit an attribute specifying a
+  double: <double1 /></para>
+
+  <para><bold>Number field</bold> used to edit an element specifying a double:
+  <double2></double2></para>
+
+  <para><bold>Spinner</bold> used to edit an attribute specifying a byte:
+  <byteA /></para>
+
+  <para><bold>Spinner</bold> used to edit an element specifying a byte
+  (step=2): <byteE></byteE></para>
+
+  <para><bold>Spinner</bold> used to edit an attribute specifying a
+  short (en_US, min=0): <shortA /></para>
+
+  <para><bold>Spinner</bold> used to edit an element specifying a short
+  (en_US, max=0): <shortE></shortE></para>
+
+  <para><bold>Spinner</bold> used to edit an attribute specifying a int
+  (en_US, min=0, max=100, step=10): <intA /></para>
+
+  <para><bold>Spinner</bold> used to edit an element specifying a int
+  (en_US, columns=5): <intE></intE></para>
+
+  <para><bold>Spinner</bold> used to edit an attribute specifying a long
+  (en_US): <longA /></para>
+
+  <para><bold>Spinner</bold> used to edit an element specifying a long 
+  (en_US): <longE></longE></para>
+
+  <para><bold>Spinner</bold> used to edit an attribute specifying a
+  float (0.0##, fr_FR): <floatA /></para>
+
+  <para><bold>Spinner</bold> used to edit an element specifying a float
+  (0.0##, fr_FR): <floatE></floatE></para>
+
+  <para><bold>Spinner</bold> used to edit an attribute specifying a
+  double (0.00####, en_US): <doubleA /></para>
+
+  <para><bold>Spinner</bold> used to edit an element specifying a double
+  (0.00####, en_US, min=0, max=1, step=0.01): <doubleE></doubleE></para>
+
+  <para>All the following fields allows to use a <bold>date picker</bold> to
+  specify a date and/or time, whatever the format used to store this date
+  and/or time in the XML document.</para>
+
+  <para>A <bold>date picker</bold> used to edit an attribute specifying a
+  date: <date30 /></para>
+
+  <para>A <bold>date picker</bold> used to edit an element specifying a date:
+  <date40></date40></para>
+
+  <para>A <bold>date picker</bold> used to edit an attribute specifying a
+  time: <time30 /></para>
+
+  <para>A <bold>date picker</bold> used to edit an element specifying a time:
+  <time40></time40></para>
+
+  <para>A <bold>date picker</bold> used to edit an attribute specifying a date
+  and a time: <dateTime30 /></para>
+
+  <para>A <bold>date picker</bold> used to edit an element specifying a date
+  and a time: <dateTime40></dateTime40></para>
+
+  <para>Another <bold>date picker</bold> used to edit an attribute specifying
+  a date: <date31 /></para>
+
+  <para>Another <bold>date picker</bold> used to edit an element specifying a
+  date: <date41></date41></para>
+
+  <para>Another <bold>date picker</bold> used to edit an attribute specifying
+  a time: <time31 /></para>
+
+  <para>Another <bold>date picker</bold> used to edit an element specifying a
+  time: <time41></time41></para>
+
+  <para>Another <bold>date picker</bold> used to edit an attribute specifying
+  a date and a time: <dateTime31 /></para>
+
+  <para>Another <bold>date picker</bold> used to edit an element specifying a
+  date and a time: <dateTime41></dateTime41></para>
+
+  <para>A <bold>date picker</bold> used to edit an attribute specifying a date
+  and a time expressed as the number of seconds since the Epoch (January 1,
+  1970 GMT): <dateTime32 /></para>
+
+  <para>A <bold>date picker</bold> used to edit an element specifying a date
+  and a time as the number of seconds since the Epoch (January 1, 1970 GMT):
+  <dateTime42></dateTime42></para>
+
+  <para>A <bold>date picker</bold> used to edit an attribute specifying a date
+  and a time expressed as the number of milliseconds since the Epoch (January
+  1, 1970 GMT): <dateTime33 /></para>
+
+  <para>A <bold>date picker</bold> used to edit an element specifying a date
+  and a time as the number of milliseconds since the Epoch (January 1, 1970
+  GMT): <dateTime43></dateTime43></para>
+</doc>

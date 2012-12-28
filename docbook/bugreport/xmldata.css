@@ -1,0 +1,79 @@
+@import url(xxe-config:xhtml/css/xhtml.css);
+
+@namespace html url(http://www.w3.org/1999/xhtml);
+@namespace br url(http://www.xmlmind.com/xmleditor/schema/bugreport);
+
+html|div {
+    background-color: #FFFFF0;
+    border: 1 solid #EEEEC0;
+    padding: 2;
+    margin: 5;
+}
+
+br|* {
+    display: block;
+    collapsible: yes;
+    not-collapsible-head: 1;
+    border: 1 solid gray;
+    padding: 1;
+    margin: 8 4;
+}
+
+br|*:before {
+    display: inline;
+    content: division(content(paragraph(content(collapser(collapsed-icon, 
+                                                          icon(pop-right), 
+                                                          expanded-icon, 
+                                                          icon(pop-down)), " ",
+					        element-name(), " ", 
+					        replace-button(tool-tip, 
+                                                               "Replace"), 
+                                                " ",
+					        insert-before-button(tool-tip, 
+                                                              "Insert Before"),
+                                                " ",
+					        insert-button(tool-tip, 
+                                                              "Insert"), 
+                                                " ",
+					        insert-after-button(tool-tip, 
+                                                              "Insert After"),
+                                                " ",
+					        convert-button(tool-tip, 
+                                                               "Convert"), 
+                                                " ",
+					        delete-button(tool-tip, 
+                                                              "Delete")),
+                                         background-color, silver,
+                                         padding-left, 4,
+                                         vertical-align, middle),
+                              attributes(margin-top, 2,
+                                         margin-bottom, 2,
+                                         margin-left, 2,
+                                         margin-right, 2),
+                              add-attribute-button(text, "Add attribute", 
+                                                   check-has-attributes, yes,
+                                                   font-size, smaller,
+                                                   text-decoration, underline,
+                                                   color, navy)));
+}
+
+/* 
+ * ***Trick*** no replaced content if element content type is different 
+ * from data (i.e. mixed, element only, etc).
+ */
+br|* {
+    content: value-editor();
+}
+
+br|*:attribute {
+    attribute-content-left: attribute-name();
+    attribute-content-middle: value-editor(attribute, attribute());
+    attribute-content-right: 
+        remove-attribute-button(icon, icon(delete),
+                                attribute, attribute(),
+                                check-required, yes,
+                                color, navy,
+                                tool-tip, "Remove Attribute");
+    show-attribute: when-added;
+}
+

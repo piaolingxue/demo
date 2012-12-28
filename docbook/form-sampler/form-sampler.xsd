@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    targetNamespace="http://www.xmlmind.com/xmleditor/schema/form-sampler"
+    xmlns="http://www.xmlmind.com/xmleditor/schema/form-sampler" 
+    elementFormDefault="qualified">
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="para" type="Para" 
+                  minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="Para" mixed="true">
+  <xs:group ref="Mix" minOccurs="0" maxOccurs="unbounded" />
+</xs:complexType>
+
+<xs:group name="Mix">
+  <xs:choice>
+    <xs:element name="bold" type="Bold" />
+    <xs:element name="onoff" type="OnOff" />
+    <xs:element name="yesno" type="YesNo" default="no" />
+    <xs:element name="disabled" type="Disabled" />
+    <xs:element name="hidden" type="Hidden" />
+    <xs:element name="rgb1" type="RGB1" />
+    <xs:element name="rgb2" type="RGB" default="blue" />
+    <xs:element name="integer1" type="Integer" />
+    <xs:element name="integer2" type="xs:int" default="0" />
+    <xs:element name="uri1" type="URI" />
+    <xs:element name="uri2" type="xs:anyURI" default="form-sampler.xml" />
+    <xs:element name="fileName" type="xs:string" default="form-sampler.xml" />
+    <xs:element name="cymk1" type="CYMK1" />
+    <xs:element name="cymk2" type="CYMK" default="black" />
+    <xs:element name="cymklist1" type="ListOfCYMK1" />
+    <xs:element name="cymklist2" type="ListOfCYMK" default="black" />
+    <xs:element name="cymka" type="CYMK1" />
+    <xs:element name="cymkb" type="CYMK" default="black" />
+    <xs:element name="cymklista" type="ListOfCYMK1" />
+    <xs:element name="cymklistb" type="ListOfCYMK" default="black" />
+    <xs:element name="string1" type="String" />
+    <xs:element name="string2" type="xs:string" />
+    <xs:element name="date1" type="Date" />
+    <xs:element name="date2" type="xs:date" default="1960-03-16" />
+    <xs:element name="time1" type="Time" />
+    <xs:element name="time2" type="xs:time" default="13:15:05.10" />
+    <xs:element name="dateTime1" type="DateTime" />
+    <xs:element name="dateTime2" type="xs:dateTime" 
+                default="1960-03-16T13:15:05Z" />
+    <xs:element name="day1" type="Day" />
+    <xs:element name="day2" type="xs:gDay" default="---16" />
+    <xs:element name="monthDay1" type="MonthDay" />
+    <xs:element name="monthDay2" type="xs:gMonthDay" default="--03-16" />
+    <xs:element name="month1" type="Month" />
+    <xs:element name="month2" type="xs:gMonth" default="--03" />
+    <xs:element name="yearMonth1" type="YearMonth" />
+    <xs:element name="yearMonth2" type="xs:gYearMonth" default="1960-03" />
+    <xs:element name="year1" type="Year" />
+    <xs:element name="year2" type="xs:gYear" default="1960" />
+    <xs:element name="byte1" type="Byte" />
+    <xs:element name="byte2" type="xs:byte" default="127" />
+    <xs:element name="short1" type="Short" />
+    <xs:element name="short2" type="xs:short" default="32767" />
+    <xs:element name="int1" type="Int" />
+    <xs:element name="int2" type="xs:int" default="2147483647" />
+    <xs:element name="long1" type="Long" />
+    <xs:element name="long2" type="xs:long" default="9223372036854775807" />
+    <xs:element name="float1" type="Float" />
+    <xs:element name="float2" type="xs:float" default="2.7182817" />
+    <xs:element name="double1" type="Double" />
+    <xs:element name="double2" type="xs:double" default="2.718281828459045" />
+
+    <xs:element name="byteA" type="ByteType" />
+    <xs:element name="byteE" type="xs:byte" default="0" />
+    <xs:element name="shortA" type="ShortType" />
+    <xs:element name="shortE" type="xs:short" default="0" />
+    <xs:element name="intA" type="IntType" />
+    <xs:element name="intE" type="xs:int" default="0" />
+    <xs:element name="longA" type="LongType" />
+    <xs:element name="longE" type="xs:long" default="0" />
+    <xs:element name="floatA" type="FloatType" />
+    <xs:element name="floatE" type="xs:float" default="0" />
+    <xs:element name="doubleA" type="DoubleType" />
+    <xs:element name="doubleE" type="xs:double" default="0" />
+
+    <xs:element name="date30" type="Date" />
+    <xs:element name="date40" type="xs:date" default="1960-03-16" />
+
+    <xs:element name="date31" type="Date31" />
+    <xs:element name="date41" type="Date41" default="03/16/1960" />
+
+    <xs:element name="time30" type="Time" />
+    <xs:element name="time40" type="xs:time" default="13:15:05.10" />
+
+    <xs:element name="time31" type="Time31" />
+    <xs:element name="time41" type="Time41" default="1315" />
+
+    <xs:element name="dateTime30" type="DateTime" />
+    <xs:element name="dateTime40" type="xs:dateTime" 
+                default="1960-03-16T13:15:05Z" />
+
+    <xs:element name="dateTime31" type="DateTime31" />
+    <xs:element name="dateTime41" type="DateTime41"
+                default="1315 03/16/1960" />
+
+    <xs:element name="dateTime32" type="DateTime32" />
+    <xs:element name="dateTime42" type="xs:double" default="0" />
+
+    <xs:element name="dateTime33" type="DateTime33" />
+    <xs:element name="dateTime43" type="xs:long" default="0" />
+  </xs:choice>
+</xs:group>
+
+<xs:complexType name="Bold" mixed="true">
+  <xs:group ref="Mix" minOccurs="0" maxOccurs="unbounded" />
+</xs:complexType>
+
+<xs:complexType name="OnOff">
+  <xs:attribute name="value" type="xs:boolean" default="false" />
+</xs:complexType>
+
+<xs:simpleType name="YesNo">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="no" />
+    <xs:enumeration value="yes" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="Disabled">
+  <xs:attribute name="value">
+    <xs:simpleType>
+      <xs:restriction base="xs:NMTOKEN">
+	<xs:enumeration value="disabled" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="Hidden" mixed="true">
+</xs:complexType>
+
+<xs:simpleType name="RGB">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="red" />
+    <xs:enumeration value="green" />
+    <xs:enumeration value="blue" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="RGB1">
+  <xs:attribute name="value" type="RGB" default="blue" />
+</xs:complexType>
+
+<xs:complexType name="Integer">
+  <xs:attribute name="value" type="xs:int" default="0" />
+</xs:complexType>
+
+<xs:complexType name="URI">
+  <xs:attribute name="value" type="xs:anyURI" default="form-sampler.xml" />
+</xs:complexType>
+
+<xs:simpleType name="CYMK">
+  <xs:restriction base="xs:NMTOKEN">
+    <xs:enumeration value="cyan" />
+    <xs:enumeration value="yellow" />
+    <xs:enumeration value="magenta" />
+    <xs:enumeration value="black" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="CYMK1">
+  <xs:attribute name="value" type="CYMK" default="black" />
+</xs:complexType>
+
+<xs:complexType name="ListOfCYMK1">
+  <xs:attribute name="value" default="black">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+	<xs:pattern value="((cyan)|(yellow)|(magenta)|(black))(,((cyan)|(yellow)|(magenta)|(black)))?" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+</xs:complexType>
+
+<xs:simpleType name="ListOfCYMK">
+  <xs:list itemType="CYMK" />
+</xs:simpleType>
+
+<xs:complexType name="String">
+  <xs:attribute name="value" type="xs:string" />
+  <xs:attribute name="rows" type="xs:positiveInteger" />
+  <xs:attribute name="columns" type="xs:positiveInteger" />
+</xs:complexType>
+
+<xs:complexType name="Date">
+  <xs:attribute name="value" type="xs:date" default="1960-03-16" />
+</xs:complexType>
+
+<xs:complexType name="Time">
+  <xs:attribute name="value" type="xs:time" default="13:15:05.10" />
+</xs:complexType>
+
+<xs:complexType name="DateTime">
+  <xs:attribute name="value" type="xs:dateTime" 
+                default="1960-03-16T13:15:05Z" />
+</xs:complexType>
+
+<xs:complexType name="Day">
+  <xs:attribute name="value" type="xs:gDay" default="---16" />
+</xs:complexType>
+
+<xs:complexType name="MonthDay">
+  <xs:attribute name="value" type="xs:gMonthDay" default="--03-16" />
+</xs:complexType>
+
+<xs:complexType name="Month">
+  <xs:attribute name="value" type="xs:gMonth" default="--03" />
+</xs:complexType>
+
+<xs:complexType name="YearMonth">
+  <xs:attribute name="value" type="xs:gYearMonth" default="1960-03" />
+</xs:complexType>
+
+<xs:complexType name="Year">
+  <xs:attribute name="value" type="xs:gYear" default="1960" />
+</xs:complexType>
+
+<xs:complexType name="Byte">
+  <xs:attribute name="value" type="xs:byte" default="-128" />
+</xs:complexType>
+
+<xs:complexType name="Short">
+  <xs:attribute name="value" type="xs:short" default="-32768" />
+</xs:complexType>
+
+<xs:complexType name="Int">
+  <xs:attribute name="value" type="xs:int" default="-2147483648" />
+</xs:complexType>
+
+<xs:complexType name="Long">
+  <xs:attribute name="value" type="xs:long" default="-9223372036854775808" />
+</xs:complexType>
+
+<xs:complexType name="Float">
+  <xs:attribute name="value" type="xs:float" default="-3.1415927" />
+</xs:complexType>
+
+<xs:complexType name="Double">
+  <xs:attribute name="value" type="xs:double" default="-3.141592653589793" />
+</xs:complexType>
+
+<xs:complexType name="ByteType">
+  <xs:attribute name="value" type="xs:byte" default="0" />
+</xs:complexType>
+
+<xs:complexType name="ShortType">
+  <xs:attribute name="value" type="xs:short" default="0" />
+</xs:complexType>
+
+<xs:complexType name="IntType">
+  <xs:attribute name="value" type="xs:int" default="0" />
+</xs:complexType>
+
+<xs:complexType name="LongType">
+  <xs:attribute name="value" type="xs:long" default="0" />
+</xs:complexType>
+
+<xs:complexType name="FloatType">
+  <xs:attribute name="value" type="xs:float" default="0" />
+</xs:complexType>
+
+<xs:complexType name="DoubleType">
+  <xs:attribute name="value" type="xs:double" default="0" />
+</xs:complexType>
+
+<xs:complexType name="Date31">
+  <xs:attribute name="value" type="Date41" default="03/16/1960" />
+</xs:complexType>
+
+<xs:simpleType name="Date41">
+  <xs:restriction base="xs:token">
+    <xs:pattern value="\d\d/\d\d/\d\d\d\d" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="Time31">
+  <xs:attribute name="value" type="Time41" default="1315" />
+</xs:complexType>
+
+<xs:simpleType name="Time41">
+  <xs:restriction base="xs:token">
+    <xs:pattern value="\d\d\d\d" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="DateTime31">
+  <xs:attribute name="value" type="DateTime41" default="1315 03/16/1960" />
+</xs:complexType>
+
+<xs:simpleType name="DateTime41">
+  <xs:restriction base="xs:token">
+    <xs:pattern value="\d\d\d\d \d\d/\d\d/\d\d\d\d" />
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="DateTime32">
+  <xs:attribute name="value" type="xs:double" default="0" />
+</xs:complexType>
+
+<xs:complexType name="DateTime33">
+  <xs:attribute name="value" type="xs:long" default="0" />
+</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema elementFormDefault="qualified"
+           targetNamespace="http://www.xmlmind.com/xmleditor/schema/bugreport"
+           xmlns="http://www.xmlmind.com/xmleditor/schema/bugreport"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns="http://www.xmlmind.com/xmleditor/schema/bugreport"
+           xmlns:html="http://www.w3.org/1999/xhtml"
+           xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty">
+  <xs:annotation>
+    <xs:documentation><html:body>
+        <html:p>This is just a <html:i>demo</html:i>, not a realistic schema
+        for bug reports.</html:p>
+
+        <html:p>A bug report is a mix of XML data (fields such as <html:a
+        href="#product_desc">product</html:a>, version, etc, are data) and XML
+        document (fields such as <html:a
+        href="#description_desc">description</html:a> and workaround are HTML
+        fragments).</html:p>
+
+        <html:p>This demo is intended to show how easy it is to style a mix of
+        XML data and XML document:</html:p>
+
+        <html:ul>
+          <html:li>XML data is styled by embedding controls such as buttons
+          and comboboxes in the document view. See <html:a
+          href="bugreport.css">bugreport.css</html:a>.</html:li>
+
+          <html:li>XML document fragments are styled using the CSS style sheet
+          used for ordinary XHTML documents. See <html:a
+          href="../../addon/config/xhtml/css/xhtml.css">xhtml.css</html:a>.</html:li>
+        </html:ul>
+
+        <html:p>Moreover, if you open this schema,
+        <html:tt>bugreport.xsd</html:tt>, in XXE, you'll see that the editor
+        is configured to allow documenting W3C XML Schemas in XHTML. For
+        example, the ``book icon'' in the tool bar inserts a
+        <html:tt>xs:annotation</html:tt>/<html:tt>xs:documentation</html:tt>
+        containing a <html:tt>html:body</html:tt> inside explicitly selected
+        schema component.</html:p>
+      </html:body></xs:documentation>
+  </xs:annotation>
+
+  <xs:import namespace="http://www.w3.org/1999/xhtml"
+             schemaLocation="xxe-config:xhtml/xsd/1.1/xhtml11.xsd"/>
+
+  <xs:element name="bugReports">
+    <xs:annotation>
+      <xs:documentation><html:body>
+          <html:p>A <html:tt>bugReports</html:tt> contains any number of
+          <html:tt>bugReport</html:tt>s. This set of
+          <html:tt>bugReport</html:tt>s can be documented using the
+          <html:tt>comments</html:tt> text field.</html:p>
+        </html:body></xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="comments" type="HTML"></xs:element>
+
+        <xs:element maxOccurs="unbounded" ref="bugReport"></xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="bugReport" type="BugReport">
+    <xs:annotation>
+      <xs:documentation><html:body>
+          <html:p>All fields except <html:tt>workaround</html:tt> and
+          <html:tt>screenShot</html:tt> must be filled.</html:p>
+
+          <html:table frame="box" rules="all">
+            <html:col />
+
+            <html:col width="2*" />
+
+            <html:thead align="center">
+              <html:tr>
+                <html:th>Field</html:th>
+
+                <html:th>Description</html:th>
+
+                <html:th>Example</html:th>
+              </html:tr>
+            </html:thead>
+
+            <html:tbody>
+              <html:tr>
+                <html:td>
+                  <html:a id="product_desc">product</html:a>
+                </html:td>
+
+                <html:td>Name of theXMLmind software product. Abbreviated
+                names are allowed.</html:td>
+
+                <html:td>XMLmind XML Editor, XXE.</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>version</html:td>
+
+                <html:td>Version number of the software.</html:td>
+
+                <html:td>2.5, 2.6p2.</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>platform</html:td>
+
+                <html:td>Operating system on which the software is
+                run.</html:td>
+
+                <html:td>-</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>javaRuntime</html:td>
+
+                <html:td>Version of the Sun or Apple
+                Java<html:sup>TM</html:sup> runtime on which the software is
+                run.</html:td>
+
+                <html:td>1.4.1_02</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>submittedBy</html:td>
+
+                <html:td>Email address of the person who found the
+                bug.</html:td>
+
+                <html:td>martin@martin.co.cz</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>date</html:td>
+
+                <html:td>Date (Year-Month-Day) of the bug.</html:td>
+
+                <html:td>2003-03-31</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>
+                  <html:a id="description_desc">description</html:a>
+                </html:td>
+
+                <html:td>Detailed description of the bug. <html:em>It is very
+                important to specify how to reproduce it.</html:em></html:td>
+
+                <html:td>-</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>workaround</html:td>
+
+                <html:td>If possible, specify which workaround you have found
+                for this bug.</html:td>
+
+                <html:td>-</html:td>
+              </html:tr>
+
+              <html:tr>
+                <html:td>screenShot</html:td>
+
+                <html:td>If relevant, please attach one or more screen shots
+                to your bug report.<html:p>Please avoid platform-specific
+                image formats such as WMF.</html:p></html:td>
+
+                <html:td>-</html:td>
+              </html:tr>
+            </html:tbody>
+          </html:table>
+        </html:body></xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:complexType name="BugReport">
+    <xs:sequence>
+      <xs:annotation>
+        <xs:documentation><html:body>
+            <html:p>Optional <html:tt>screenShot</html:tt>s should be after
+            optional workaround. Moved them before
+            <html:tt>description</html:tt> to avoid having to define a macro
+            cgommand to add them (not possible for a demo).</html:p>
+          </html:body></xs:documentation>
+      </xs:annotation>
+
+      <xs:element name="product" type="NonEmptyToken"></xs:element>
+
+      <xs:element name="version" type="ProductVersion"></xs:element>
+
+      <xs:element name="platform" type="Platform"></xs:element>
+
+      <xs:element name="javaRuntime" type="NonEmptyToken"></xs:element>
+
+      <xs:element name="submittedBy" type="Email"></xs:element>
+
+      <xs:element name="date" type="xs:date"></xs:element>
+
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="screenShot"
+                  type="ScreenShot"></xs:element>
+
+      <xs:element name="description" type="HTML"></xs:element>
+
+      <xs:element minOccurs="0" name="workaround" type="HTML"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Empty"></xs:complexType>
+
+  <xs:simpleType name="NonEmptyToken">
+    <xs:restriction base="xs:token">
+      <xs:minLength value="1"></xs:minLength>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ProductVersion">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="\d+\.\d+((b|p)\d+)?"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Email">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="[^\s@]+@\S+"></xs:pattern>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="Platform">
+    <xs:choice>
+      <xs:element name="windowsNT" type="Empty"></xs:element>
+
+      <xs:element name="windows2000" type="Empty"></xs:element>
+
+      <xs:element name="windowsXP" type="Empty"></xs:element>
+
+      <xs:element name="windowsVista" type="Empty"></xs:element>
+
+      <xs:element name="windows7" type="Empty"></xs:element>
+
+      <xs:element name="windows8" type="Empty"></xs:element>
+
+      <xs:element name="macOSX" type="Empty"></xs:element>
+
+      <xs:element name="linux" type="Empty"></xs:element>
+
+      <xs:element name="other" type="NonEmptyToken"></xs:element>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="HTML">
+    <xs:sequence>
+      <xs:element ref="html:div"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ScreenShot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" type="HTML"></xs:element>
+    </xs:sequence>
+
+    <xs:attribute name="image" type="xs:anyURI" use="required"></xs:attribute>
+
+    <xs:attribute name="format" type="xs:NMTOKEN"></xs:attribute>
+  </xs:complexType>
+</xs:schema>

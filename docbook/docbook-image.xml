@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<article>
+  <title>Support of images in DocBook</title>
+
+  <note>
+    <itemizedlist>
+      <listitem>
+        <para>Most images used in this demo are public domain, copyright-free,
+        and come from the Gimp-Savvy.com photo archive.</para>
+      </listitem>
+
+      <listitem>
+        <para>For a thorough description of how to specify images in DocBook
+        documents, please consult the description of the <sgmltag
+        class="element">imagedata</sgmltag> element in <citetitle>DocBook: The
+        Definitive Guide</citetitle>.</para>
+      </listitem>
+    </itemizedlist>
+  </note>
+
+  <section>
+    <title>Inline and displayed images</title>
+
+    <para>An inline image is represented by an <sgmltag
+    class="element">inlinemediaboject</sgmltag>/<sgmltag
+    class="element">imageobject</sgmltag>/<sgmltag
+    class="element">imagedata</sgmltag> element <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="graphics/fish3.png" format="PNG" scale="25"/>
+        </imageobject>
+      </inlinemediaobject> and a displayed image is represented by an <sgmltag
+    class="element">mediaboject</sgmltag>/<sgmltag
+    class="element">imageobject</sgmltag>/<sgmltag
+    class="element">imagedata</sgmltag> element.</para>
+
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="graphics/fish1.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+
+    <para>There are also the much simpler <sgmltag
+    class="element">inlinegraphic</sgmltag> <inlinegraphic
+    fileref="graphics/fish5.png" format="PNG" scale="33"/> and <sgmltag
+    class="element">graphic</sgmltag> elements but their use is more or less
+    deprecated.</para>
+
+    <graphic fileref="graphics/fish4.gif" format="GIF"/>
+
+    <para>The image files referenced by imagedata, inlinegraphic and graphic
+    are specified using the <guilabel>Attribute</guilabel> tool by setting the
+    <sgmltag class="attribute">fileref</sgmltag><footnote>
+        <para>Specifying images using the <sgmltag
+        class="attribute">entityref</sgmltag> attribute of these elements is
+        <emphasis>absolutely not supported</emphasis> by XMLmind XML Editor,
+        as well as all the notation and non-parsed entity machinery inherited
+        from SGML.</para>
+      </footnote> attribute of these elements. However, it is much more
+    convenient</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>to <emphasis>double-click</emphasis> on the image or image
+        placeholder and use the displayed dialog box</para>
+      </listitem>
+
+      <listitem>
+        <para>or simply to <emphasis>drag and drop</emphasis> an image file on
+        the image or image placeholder.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+
+  <section>
+    <title>Resizing an image</title>
+
+    <para>By default, images are displayed at their normal
+    (<firstterm>intrinsic</firstterm>) size. The easiest way to resize an
+    image is to specify the <sgmltag class="attribute">scale</sgmltag>
+    attribute of the <sgmltag class="element">imagedata</sgmltag> element. The
+    value of this attribute is a percentage of the normal size of the
+    image.</para>
+
+    <para>This is what we have done for the two fishes which are displayed
+    inline above. Click on each of them and you'll see that we have specified
+    <sgmltag class="attribute">scale</sgmltag>=<sgmltag
+    class="attvalue">25%</sgmltag> for the first one and <sgmltag
+    class="attribute">scale</sgmltag>=<sgmltag class="attvalue">33</sgmltag>
+    (<literal>%</literal> is implied) for the second one.</para>
+
+    <para>It is also possible to directly specify the size of an image by
+    setting the <sgmltag class="attribute">contentwidth</sgmltag> and <sgmltag
+    class="attribute">contentdepth</sgmltag> of the <sgmltag
+    class="element">imagedata</sgmltag> element. Supported units are:
+    <literal>pt</literal> (points &mdash; 1/72 of an inch) ,
+    <literal>cm</literal> (centimeters), <literal>mm</literal> (millimeters),
+    in (inches), <literal>pc</literal> (picas &mdash; 1/6 of an inch),
+    <literal>px</literal> (pixels), <literal>em</literal> (the unit here is
+    the base font size, something close to 12pt). No unit means
+    <literal>px</literal> (pixels). '<literal>%</literal>' is also supported
+    and is a percentage of the normal size.</para>
+
+    <figure>
+      <title>Image at its normal size</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="graphics/tiger.jpg" format="JPEG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Image with contentwidth=5cm</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentwidth="5cm" fileref="graphics/tiger.jpg"
+                     format="JPG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Image with contentdepth=30mm</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentdepth="30mm" fileref="graphics/tiger.jpg"
+                     format="JPEG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <figure>
+      <title>Image with contentwidth=50% and contentdepth=70%</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata contentdepth="70%" contentwidth="50%"
+                     fileref="graphics/tiger.jpg" format="JPG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </section>
+
+  <section>
+    <title>The viewport of an image</title>
+
+    <para>An image is drawn in a <firstterm>viewport</firstterm>. It is
+    possible to explicitly specify the size of this viewport by setting the
+    <sgmltag class="attribute">width</sgmltag> and <sgmltag
+    class="attribute">depth</sgmltag> attributes of the <sgmltag
+    class="element">imagedata</sgmltag> element.</para>
+
+    <mediaobject>
+      <imageobject>
+        <imagedata align="right" depth="2in" fileref="graphics/flower1.jpeg"
+                   format="JPEG" scale="10" valign="bottom" width="5in"/>
+      </imageobject>
+    </mediaobject>
+
+    <para>In the image above, the viewport is much larger (5inx2in) than the
+    image (10% of 779x704) and the image is aligned at the bottom/right of the
+    viewport. This is specified by explicitly setting the <sgmltag
+    class="attribute">valign</sgmltag> and <sgmltag
+    class="attribute">align</sgmltag> attributes of the <sgmltag
+    class="element">imagedata</sgmltag> element to <sgmltag
+    class="attvalue">bottom</sgmltag> and <sgmltag
+    class="attvalue">right</sgmltag> (they default to <sgmltag
+    class="attvalue">middle</sgmltag> and <sgmltag
+    class="attvalue">center</sgmltag>).</para>
+
+    <para>The most useful use of a viewport is to scale an image to fit the
+    size of the viewport. This is done by removing the <sgmltag
+    class="attribute">scale</sgmltag>, <sgmltag
+    class="attribute">contentwidth</sgmltag>, <sgmltag
+    class="attribute">contentdepth</sgmltag> attributes if any, and setting
+    the <sgmltag class="attribute">scalefit</sgmltag> attribute of the
+    <sgmltag class="element">imagedata</sgmltag> element to <sgmltag
+    class="attvalue">1</sgmltag>.</para>
+
+    <figure>
+      <title>The 779x704 image is scaled to fit the 5inx2in viewport. (Plus
+      the <sgmltag class="attribute">valign</sgmltag> and <sgmltag
+      class="attribute">align</sgmltag> attributes have been removed.)</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata depth="2in" fileref="graphics/flower1.jpeg" format="JPEG"
+                     scalefit="1" width="5in"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </section>
+
+  <section>
+    <title>Dynamic viewports</title>
+
+    <para>The size of a viewport can be expressed as a percentage of the
+    available area. This is very useful when images are added to table
+    cells.</para>
+
+    <informaltable>
+      <tgroup cols="2">
+        <colspec align="center"/>
+
+        <colspec align="center" colwidth="2*"/>
+
+        <thead>
+          <row>
+            <entry>Name</entry>
+
+            <entry>Photo</entry>
+          </row>
+        </thead>
+
+        <tbody valign="middle">
+          <row>
+            <entry>Duck</entry>
+
+            <entry><mediaobject>
+                <imageobject>
+                  <imagedata fileref="graphics/duck.jpg" format="JPEG"
+                             scalefit="1" width="75%"/>
+                </imageobject>
+              </mediaobject></entry>
+          </row>
+
+          <row>
+            <entry>Sea cow</entry>
+
+            <entry><mediaobject>
+                <imageobject>
+                  <imagedata fileref="graphics/seacow.jpg" format="JPEG"
+                             scalefit="1" width="75%"/>
+                </imageobject>
+              </mediaobject></entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </informaltable>
+
+    <para>Now resize the window of XMLmind XML Editor and watch what
+    happens.</para>
+
+    <para>Note that specifying the <sgmltag class="attribute">depth</sgmltag>
+    of the <sgmltag class="element">imagedata</sgmltag> element as a
+    percentage is useless in XMLmind XML Editor which has no concept of page.
+    Click on the above images and look at the <guilabel>Attribute</guilabel>
+    tool to see how we have specified dynamic viewports for them.</para>
+
+    <section>
+      <title>Image formats</title>
+
+      <para>Out of the box, XMLmind XML Editor supports all the image formats
+      supported by the <trademark>Java</trademark> runtime: BMP, GIF, JPEG and
+      PNG.</para>
+
+      <para>In order to be able to really see the images below, you need to
+      download and install the <ulink
+      url="http://xml.apache.org/batik/">Batik</ulink> and "JAI Image I/O
+      Tools" <firstterm>image toolkit plug-ins</firstterm> using menu item
+      <menuchoice>
+          <guimenu>Options</guimenu>
+
+          <guimenuitem>Install Add-ons</guimenuitem>
+        </menuchoice> . Batik adds the support of <ulink
+      url="http://www.w3.org/TR/SVG11/"><firstterm>SVG</firstterm></ulink>
+      graphics and <ulink
+      url="http://download.java.net/media/jai-imageio/builds/release/1.1/README-jai_imageio.html">"JAI
+      Image I/O Tools"</ulink> adds the support of several image formats
+      including TIFF.</para>
+
+      <figure>
+        <title>SVG graphics (requires the Batik image toolkit plug-in)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="graphics/tux.svg" scalefit="1" width="33%"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title>A TIFF image (requires the "JAI Image I/O Tools" image toolkit
+        plug-in)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="graphics/butterfly.tif" format="TIFF"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title>JPEG2000 image (requires the "JAI Image I/O Tools" image
+        toolkit plug-in)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata contentwidth="322" fileref="graphics/bretagne.jp2"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title>PPM image (requires the "JAI Image I/O Tools" image toolkit
+        plug-in)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="graphics/eagle.ppm"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <figure>
+        <title>A BMP image</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="graphics/mountain.bmp" format="BMP"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </section>
+
+    <section>
+      <title>More image formats</title>
+
+      <para>What if your images are stored using uncommon or proprietary
+      formats? Aren't you tired of converting your images to GIF, JPEG or PNG
+      in order to be able to use them in your documents?</para>
+
+      <para>If you have a command line tool which can convert your images to
+      GIF, JPEG or PNG, you can specify an image toolkit plug-in making use of
+      such command line tool in just 5 minutes, without having to program.
+      These declarative image toolkit plug-ins <emphasis>are specified in
+      XML</emphasis> in XMLmind XML Editor configuration files. See
+      <citetitle>XMLmind XML Editor - Configuration and Deployment</citetitle>
+      for details.</para>
+
+      <para>To give external consultants and local gurus a quick start
+      (authors are not expected to specify XMLmind XML Editor configurations),
+      we have written 2 of these declarative plug-ins:</para>
+
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para><literal>Ghostscript</literal> converts EPS and PDF graphics
+          to PNG using the <command>gs</command> (<command>gswin32c</command>
+          on Windows) command-line tool.</para>
+        </listitem>
+
+        <listitem>
+          <para><literal>TeX Math</literal> converts TeX mathematics (i.e.
+          equations) to PNG, EPS or PDF using a custom shell script/batch file
+          which invokes <command>latex</command>, <command>dvips</command> and
+          Ghostscript's <command>gs</command>.</para>
+        </listitem>
+      </itemizedlist>
+
+      <para>If you install these 2 plug-ins properly<footnote>
+          <para>On most <emphasis>recent</emphasis> Linux
+          distributions,</para>
+
+          <orderedlist spacing="compact">
+            <listitem>
+              <para>include
+              <filename><replaceable>XXE_install_dir</replaceable>/docs/configure/samples2/imagetoolkits.incl</filename>
+              in your <filename>~/.xxe5/addon/customize.xxe</filename>,</para>
+            </listitem>
+
+            <listitem>
+              <para>copy the
+              <filename><replaceable>XXE_install_dir</replaceable>/docs/configure/samples2/texmathtoimg</filename>
+              shell script to <filename>~/.xxe5/addon/</filename>.</para>
+            </listitem>
+          </orderedlist>
+        </footnote>, you should be able to see how the images below really
+      look like.</para>
+
+      <figure>
+        <title>EPS and PDF graphics (requires the Ghostscript image toolkit
+        plug-in)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="graphics/tiger.eps" format="EPS" scalefit="1"
+                       width="33%"/>
+          </imageobject>
+
+          <imageobject>
+            <imagedata fileref="graphics/tiger.pdf" scalefit="1" width="33%"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+
+      <equation>
+        <title>An equation specified using the TeX notation (requires the TeX
+        Math image toolkit plug-in)</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="equations/eq2.tex" format="TEX"/>
+          </imageobject>
+        </mediaobject>
+      </equation>
+
+      <note>
+        <title>About equations</title>
+
+        <para>In the above <sgmltag class="element">equation</sgmltag>, there
+        is no need to add an <sgmltag>alt</sgmltag> child containing the
+        equation written using the TeX notation:</para>
+
+        <programlisting>\[\hat{\beta} = \frac{\sum_{t=1}^n x_t y_t - \bar{y} \sum_{t=1}^n x_t}
+                     {\sum_{t=1}^n x^2_t - \bar{x}\sum_{t=1}^n x_t}\]</programlisting>
+
+        <para>Suffice to store this equation in a separate file having a
+        "<literal>.tex</literal>" suffix (for the above equation, it is
+        <filename>equations/eq2.tex</filename>) and XXE will automatically
+        convert this file to PNG, EPS or PDF as needed.</para>
+      </note>
+    </section>
+
+    <section>
+      <title>Converting image-rich DocBook documents to HTML, RTF, PostScript,
+      PDF</title>
+
+      <para>If you are using XMLmind XML Editor Professional Edition, you can
+      try converting this document to HTML, RTF, PostScript and PDF. In order
+      to do this, you need to use the
+      <guimenu>DocBook</guimenu>|<guimenuitem>Convert Document</guimenuitem>
+      menu and specify a file name (a directory name for multi-page HTML) when
+      prompted by the URL chooser dialog box.</para>
+
+      <para>If you do this, what follows describes and analyses what you'll
+      see.</para>
+
+      <informaltable>
+        <tgroup cols="4">
+          <colspec align="center"/>
+
+          <colspec align="center"/>
+
+          <colspec colwidth="2*"/>
+
+          <colspec colwidth="2*"/>
+
+          <thead>
+            <row>
+              <entry align="center">FO Processor</entry>
+
+              <entry align="center">Output Format</entry>
+
+              <entry align="center">Image Geometry</entry>
+
+              <entry align="center">Image Formats</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry valign="middle">N/A</entry>
+
+              <entry valign="middle">HTML</entry>
+
+              <entry>Viewport not fully supported due to the limitations of
+              HTML.</entry>
+
+              <entry><para>All images in formats other than GIF, JPEG and PNG
+              are automatically converted by the
+              <literal>docb.toHTML</literal> (part of the DocBook
+              configuration for XXE) process command to PNG.</para><para>Of
+              course, this requires the corresponding <ulink
+              url="http://www.xmlmind.com/xmleditor/addons.shtml">image
+              toolkit plug-ins</ulink> to have been properly
+              installed.</para><para>Note that the
+              <literal>docb.toHTML</literal> process command can be easily
+              modified to generate an <sgmltag class="element">embed</sgmltag>
+              tag for SVG graphics.</para></entry>
+            </row>
+
+            <row>
+              <entry valign="middle"><ulink
+              url="http://www.xmlmind.com/foconverter/">XMLmind XSL-FO
+              Converter 4.6+</ulink></entry>
+
+              <entry valign="middle">RTF, WordprocessingML (Word 2003+),
+              Office Open XML (Word 2007+) and OpenDocument
+              (OpenOffice.org 2+).</entry>
+
+              <entry><ulink url="http://www.w3.org/TR/xsl/">XSL-FO</ulink>
+              specifications fully implemented.</entry>
+
+              <entry><itemizedlist>
+                  <listitem>
+                    <para>Supports SVG, thanks to <ulink
+                    url="http://xml.apache.org/batik/">Batik</ulink>.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Supports MathML, thanks to <ulink
+                    url="http://jeuclid.sourceforge.net/">JEuclid</ulink>.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>All images in formats other than GIF, JPEG and PNG
+                    are automatically converted by the
+                    <literal>docb.toRTF</literal> (part of the DocBook
+                    configuration for XXE) process command to PNG.</para>
+
+                    <para>Of course, this requires the corresponding <ulink
+                    url="http://www.xmlmind.com/xmleditor/addons.shtml">image
+                    toolkit plug-ins</ulink> to have been properly
+                    installed.</para>
+                  </listitem>
+                </itemizedlist></entry>
+            </row>
+
+            <row>
+              <entry morerows="1" valign="middle"><ulink
+              url="http://xml.apache.org/fop/">Apache FOP 1.0+</ulink></entry>
+
+              <entry valign="middle">PostScript</entry>
+
+              <entry morerows="1"><itemizedlist>
+                  <listitem>
+                    <para>Viewport <emphasis>is</emphasis> supported.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>FOP has a <literal>source-resolution</literal>
+                    configuration option. When run within XXE, the default
+                    value of <literal>source-resolution</literal> is 120DPI
+                    (like RenderX XEP) instead of default 72DPI.</para>
+                  </listitem>
+                </itemizedlist></entry>
+
+              <entry morerows="1"><itemizedlist>
+                  <listitem>
+                    <para>Supports SVG, including very sophisticated features
+                    such as gradient fills thanks to <ulink
+                    url="http://xml.apache.org/batik/">Batik</ulink>.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Supports MathML, thanks to <ulink
+                    url="http://jeuclid.sourceforge.net/">JEuclid</ulink>.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Natively supports EPS graphics when PostScript is
+                    generated.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Does not natively supports PDF graphics when PDF is
+                    generated.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>The resolution specified in PNG images is taken into
+                    account, which may give unexpected results.</para>
+                  </listitem>
+                </itemizedlist></entry>
+            </row>
+
+            <row>
+              <entry valign="middle">PDF</entry>
+            </row>
+
+            <row>
+              <entry morerows="1" valign="middle"><ulink
+              url="http://www.renderx.com/">RenderX XEP 4.0+</ulink></entry>
+
+              <entry valign="middle">PostScript</entry>
+
+              <entry morerows="1"><ulink
+              url="http://www.w3.org/TR/xsl/">XSL-FO</ulink> specifications
+              fully implemented.</entry>
+
+              <entry morerows="1"><itemizedlist>
+                  <listitem>
+                    <para>Natively supports SVG but <emphasis>very</emphasis>
+                    sophisticated features such as gradient fills are not yet
+                    implements.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Natively supports EPS graphics when PostScript is
+                    generated.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Natively supports PDF graphics when PDF is
+                    generated.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>Transparent backgrounds in PNG images are not
+                    supported.</para>
+                  </listitem>
+
+                  <listitem>
+                    <para>The resolution specified in PNG images is taken into
+                    account, which may give unexpected results.</para>
+                  </listitem>
+                </itemizedlist></entry>
+            </row>
+
+            <row>
+              <entry valign="middle">PDF</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+
+      <note id="fop">
+        <title>About the FOP software included in the <ulink
+        url="http://www.xmlmind.com/xmleditor/addons.shtml">FOP add-ons for
+        XXE</ulink></title>
+
+        <para>Note that this version is different from the stock FOP 1.0 found
+        at <ulink
+        url="http://xml.apache.org/fop/">http://xml.apache.org/fop/</ulink>.
+        It has been modified by XMLmind to work with <ulink
+        url="http://saxon.sourceforge.net/saxon6.5.5/">Saxon</ulink>, the XSLT
+        processor which is bundled with XMLmind XML Editor (FOP is generally
+        used with <ulink url="http://xalan.apache.org/">Xalan</ulink>).</para>
+      </note>
+    </section>
+  </section>
+</article>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>XHTML Table Support</title>
+  </head>
+
+  <body>
+    <h1>Sample tables taken from the <a
+    href="http://www.w3.org/TR/html401">HTML 4.01 specification</a></h1>
+
+    <table border="1" id="table1"
+           summary="this table gives some statistics about fruit                    flies: average height and weight, and percentage                    with red eyes (for both males and females).">
+      <caption>A test table with merged cells</caption>
+
+      <tr>
+        <th rowspan="2"></th>
+
+        <th colspan="2">Average</th>
+
+        <th rowspan="2">Red<br />Eyes</th>
+      </tr>
+
+      <tr>
+        <th>Height</th>
+
+        <th>Weight</th>
+      </tr>
+
+      <tr>
+        <th>Males</th>
+
+        <td>1.9</td>
+
+        <td>0.003</td>
+
+        <td>40%</td>
+      </tr>
+
+      <tr>
+        <th>Females</th>
+
+        <td>1.7</td>
+
+        <td>0.002</td>
+
+        <td>43%</td>
+      </tr>
+    </table>
+
+    <p>Another test table with merged cells.</p>
+
+    <table border="1" id="table2">
+      <tr>
+        <td>1,1</td>
+
+        <td colspan="2">1,2</td>
+
+        <td>1,1</td>
+      </tr>
+
+      <tr>
+        <td colspan="2" rowspan="2">2,2</td>
+
+        <td rowspan="3">3,1</td>
+
+        <td>1,1</td>
+      </tr>
+
+      <tr>
+        <td>1,1<br />(Deleting this column will not remove this cell because
+        it would make the row empty.)</td>
+      </tr>
+
+      <tr>
+        <td>1,1</td>
+
+        <td>1,1</td>
+
+        <td>1,1</td>
+      </tr>
+    </table>
+
+    <table border="1" cellpadding="5" cellspacing="2" id="table3"
+           summary="History courses offered in the community of            Bath arranged by course name, tutor, summary,             code, and fee">
+      <tr>
+        <th colspan="5" scope="colgroup">Community Courses &mdash; Bath Autumn
+        1997</th>
+      </tr>
+
+      <tr>
+        <th abbr="Name" scope="col">Course Name</th>
+
+        <th abbr="Tutor" scope="col">Course Tutor</th>
+
+        <th scope="col">Summary</th>
+
+        <th scope="col">Code</th>
+
+        <th scope="col">Fee</th>
+      </tr>
+
+      <tr valign="middle">
+        <td scope="row">After the Civil War</td>
+
+        <td>Dr. John Wroughton</td>
+
+        <td>The course will examine the turbulent years in England after 1646.
+        <em>6 weekly meetings starting Monday 13th October.</em></td>
+
+        <td>H27</td>
+
+        <td>£32</td>
+      </tr>
+
+      <tr valign="middle">
+        <td scope="row">An Introduction to Anglo-Saxon England</td>
+
+        <td>Mark Cottle</td>
+
+        <td>One day course introducing the early medieval period
+        reconstruction the Anglo-Saxons and their society. <em>Saturday 18th
+        October.</em></td>
+
+        <td>H28</td>
+
+        <td>£18</td>
+      </tr>
+
+      <tr valign="middle">
+        <td scope="row">The Glory that was Greece</td>
+
+        <td>Valerie Lorenz</td>
+
+        <td>Birthplace of democracy, philosophy, heartland of theater, home of
+        argument. The Romans may have done it but the Greeks did it first.
+        <em>Saturday day school 25th October 1997</em></td>
+
+        <td>H30</td>
+
+        <td>£18</td>
+      </tr>
+    </table>
+
+    <table border="2" frame="hsides" id="table4" rules="groups"
+           summary="Code page support in different versions of MS Windows.">
+      <caption>Code-Page Support In Microsoft Windows</caption>
+
+      <colgroup align="center"></colgroup>
+
+      <colgroup align="left" width="2*"></colgroup>
+
+      <colgroup align="center" span="2" width="0*"></colgroup>
+
+      <colgroup align="center" span="3"></colgroup>
+
+      <thead valign="top">
+        <tr>
+          <th>Code-Page<br />ID</th>
+
+          <th>Name</th>
+
+          <th>ACP</th>
+
+          <th>OEMCP</th>
+
+          <th>Windows<br />NT 3.1</th>
+
+          <th>Windows<br />NT 3.51</th>
+
+          <th>Windows<br />95</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1200</td>
+
+          <td>Unicode (BMP of ISO/IEC-10646)</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>*</td>
+        </tr>
+
+        <tr>
+          <td>1250</td>
+
+          <td>Windows 3.1 Eastern European</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1251</td>
+
+          <td>Windows 3.1 Cyrillic</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1252</td>
+
+          <td>Windows 3.1 US (ANSI)</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1253</td>
+
+          <td>Windows 3.1 Greek</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1254</td>
+
+          <td>Windows 3.1 Turkish</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1255</td>
+
+          <td>Hebrew</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1256</td>
+
+          <td>Arabic</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1257</td>
+
+          <td>Baltic</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>1361</td>
+
+          <td>Korean (Johab)</td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>**</td>
+
+          <td>X</td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>437</td>
+
+          <td>MS-DOS United States</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>708</td>
+
+          <td>Arabic (ASMO 708)</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>709</td>
+
+          <td>Arabic (ASMO 449+, BCON V4)</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>710</td>
+
+          <td>Arabic (Transparent Arabic)</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+
+        <tr>
+          <td>720</td>
+
+          <td>Arabic (Transparent ASMO)</td>
+
+          <td></td>
+
+          <td>X</td>
+
+          <td></td>
+
+          <td></td>
+
+          <td>X</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/dtd/concept.dtd">
+<concept id="concept1">
+  <title>A sample concept</title>
+
+  <shortdesc>If you wish to attract more birds to your Acme Bird Feeder, learn
+  the art of bird calling. Bird calling is an efficient way to alert more
+  birds to the presence of your bird feeder.</shortdesc>
+
+  <conbody>
+    <p><indexterm>concept<indexterm
+    start="concept_example">Example</indexterm></indexterm>Bird calling
+    requires learning:</p>
+
+    <ul compact="yes">
+      <li>Popular and classical bird songs.</li>
+
+      <li>How to whistle like a bird.<indexterm end="concept_example"/></li>
+    </ul>
+  </conbody>
+</concept>

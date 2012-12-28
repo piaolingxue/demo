@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section version="5.0" xml:id="indexterm"
+         xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <title>Element <tag class="element">indexterm</tag></title>
+
+  <para>DocBook 5 has three kinds of <tag class="element">indexterm</tag>
+  elements:</para>
+
+  <variablelist xml:id="indexterm_types">
+    <varlistentry>
+      <term>indexterm(singular)</term>
+
+      <listitem>
+        <para>(Called "<literal>indexterm (db.indexterm.singular)</literal>"
+        in <link xlink:href="http://www.docbook.org/tdg5/">DocBook 5.0: The
+        Definitive Guide</link>.) A wrapper for an indexed term.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>indexterm(startofrange)</term>
+
+      <listitem>
+        <para>(Called
+        "<literal>indexterm (db.indexterm.startofrange)</literal>" in <link
+        xlink:href="http://www.docbook.org/tdg5/">DocBook 5.0: The Definitive
+        Guide</link>.) A wrapper for an indexed term that covers a
+        range.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>indexterm(endofrange)</term>
+
+      <listitem>
+        <para>(Called "<literal>indexterm (db.indexterm.endofrange)</literal>"
+        in <link xlink:href="http://www.docbook.org/tdg5/">DocBook 5.0: The
+        Definitive Guide</link>.) Identifies the end of a range associated
+        with an indexed term.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para>Example 1 (<literal>indexterm(singular)</literal>): The Tiger
+  <indexterm>
+      <primary>Big Cats</primary>
+
+      <secondary>Tigers</secondary>
+    </indexterm> is a very large cat indeed.</para>
+
+  <para><inlinemediaobject>
+      <imageobject>
+        <imagedata fileref="images/action.png"/>
+      </imageobject>
+    </inlinemediaobject> Please click on the above <tag
+  class="element">indexterm</tag> element, use <menuchoice>
+      <guimenu>Edit</guimenu>
+
+      <guimenuitem>Replace</guimenuitem>
+    </menuchoice> (<keycombo>
+      <keycap>Ctrl</keycap>
+
+      <keycap>R</keycap>
+    </keycombo>), then type "<literal>in</literal>" (autocompletion) to see
+  what is suggested in the element list of the <guilabel>Edit</guilabel>
+  tool.</para>
+
+  <para>Example 2 (<literal>indexterm(singular)</literal>): <indexterm
+      zone="a1 a2">
+      <primary>Network Configuration</primary>
+    </indexterm></para>
+
+  <blockquote xml:id="a1">
+    <formalpara>
+      <title>Configuring Your Network</title>
+
+      <para>Everything you need to know about configuring your network.</para>
+    </formalpara>
+  </blockquote>
+
+  <para>Example 3
+  (<literal>indexterm(startofrange)</literal>/<literal>indexterm(endofrange)</literal>
+  pair): <indexterm class="startofrange" xml:id="idxexformalpara">
+      <primary>Example formalpara</primary>
+    </indexterm></para>
+
+  <blockquote>
+    <formalpara>
+      <title>Example formalpara</title>
+
+      <para>Some content. <indexterm class="endofrange"
+      startref="idxexformalpara"/></para>
+    </formalpara>
+  </blockquote>
+
+  <para xml:id="a2"><inlinemediaobject>
+      <imageobject>
+        <imagedata fileref="images/action.png"/>
+      </imageobject>
+    </inlinemediaobject> Please click on any of the above <tag
+  class="element">indexterm</tag> elements and then use <menuchoice>
+      <guimenu>Help</guimenu>
+
+      <guimenuitem>Show Content Model</guimenuitem>
+    </menuchoice> (<keycombo>
+      <keycap>Shift</keycap>
+
+      <keycap>F1</keycap>
+    </keycombo>) to display their content models.</para>
+</section>
