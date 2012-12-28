@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding="utf-8"?>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="zh-CN"
+	 xmlns:xlink='http://www.w3.org/1999/xlink'>
+  <info>
+    <title>我的第一篇Docbook 5.0文档</title>
+    <author>
+      <personname>
+	<firstname>li</firstname>
+	<surname>Yang</surname>
+      </personname>
+    </author>
+  </info>
+  
+  <section>   
+    <title>文档介绍</title>
+    <para>
+      这是我的第一篇Docbook 5.0文档，欢迎你来到<link xlink:href='http://easwy.com/blog/'>Easwy的博客</link>。
+    </para>
+  </section>
+  
+</article>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:mml="http://www.w3.org/1998/Math/MathML"
+         xmlns:htm="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>My First Article </title>
+    <author>
+      <personname><firstname>Bin</firstname><surname>Li</surname></personname>
+      <affiliation>
+	<orgname>Plx.Studio</orgname>
+	<address>
+	  <postcode>215009</postcode>,<street>JingDe Road</street>,<city>Suzhou</city>,<country>China</country>
+	  Phone:<phone>+86 13912601243</phone>,
+	  Web:<otheraddr><link xlink:href="http://piaolingxue.github.com">piaolingxue's blog</link></otheraddr>
+	  Email:<email>piaolingxue305@gmail.com</email>
+	</address>
+      </affiliation>
+    </author>
+    
+    <pubdate>28 Dec 2012</pubdate>
+  </info>
+
+
+  <section version="5.0" xml:id="introduction">
+    <title>Section One</title>
+    <para>This is a text.</para>
+    <para>
+      you can prefer
+      <menuchoice><guimenu>File</guimenu><guisubmenu>New Project</guisubmenu></menuchoice>
+    </para>
+    <para>
+      <programlisting language="xml" linenumbering="numbered" startinglinenumber="1" continuation="continues">	
+	<lineannotation>hello</lineannotation>
+	<![CDATA[
+ #include <stdio.h>
+ void main(int argc, char **argv) {
+   println("hello,world!!!");
+ }
+	]]>
+      </programlisting>
+    </para>
+  </section>
+  
+  <xi:include href="chap1.xml"/>
+</article>
