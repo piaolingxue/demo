@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="zh_cn">
+  <title>HTML纪要</title>
+  <titleabbrev>html</titleabbrev>
+  <info>
+    <author><orgname>Plx.Studio</orgname></author>
+    <author><personname>Li Bin</personname></author>
+  </info>
+  <dedication>
+    <para>谨以此书献给学习HTML的读者</para>
+  </dedication>
+  <chapter>
+    <title>HTML 概述</title>
+    <para>You must include at least one chapter in your book.</para>
+    <para>Here is another paragraph.</para>
+    <important>
+      <para>This is some really important text.</para>
+    </important>
+    <tip>
+      <para>Look both ways before crossing the street!</para>
+    </tip>
+    <caution>
+      <para>
+	Liberal use of <code>new</code> in loops can cause performance issues!
+      </para>
+    </caution>
+    <note><para>当然过高评估! </para></note>
+    <example>
+      <title>Example 1</title>
+      <programlisting>
+	String something = "Something";
+      </programlisting>        
+    </example>
+  </chapter>
+  <chapter>
+    <title>HTML 标签</title>
+    <para>HTML 标签分为好多种。</para>
+    <section>
+      <title>Link</title>
+      <para>What is the HTML Link?</para>
+    </section>
+    <section>
+      <title>Table</title>
+      <para>What is the HTML Table?</para>
+    </section>
+  </chapter>
+</book>
