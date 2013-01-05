@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #333;
+    background-color: #eee;
     margin: 1em;
     padding: 1em;
     -webkit-border-radius: 6px;
@@ -11,19 +11,19 @@ body {
 }
 
 h1.title {
-    color: #cb6c8a;
+    color: #006c8a;
 }
 
 h2.title {
-    color: #cb6c8a;
+    color: #006c8a;
 }
 
 div.section h2.title {
-    color: #82a4bb;
+    color: #00a4bb;
 }
 
 p {
-    color: #bfbbaf;
+    color: #00bbaf;
     text-indent: 2em;
 }
 
@@ -74,3 +74,11 @@ div.note {
     color: #999;  
     border: 1px solid gray;  
 }  
+
+pre.programlisting { 
+    background-color: #E0E0E0; 
+    border-width: 1.5pt;
+    border-style: solid;
+    border-color: #575757;
+    padding: 3pt;
+}

@@ -1,47 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<book xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="zh_cn">
-  <title>HTML纪要</title>
-  <titleabbrev>html</titleabbrev>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>CMake Study</title>
+  <titleabbrev>cmake</titleabbrev>
   <info>
     <author><orgname>Plx.Studio</orgname></author>
     <author><personname>Li Bin</personname></author>
   </info>
   <dedication>
-    <para>谨以此书献给学习HTML的读者</para>
+    <para>CMake, more than just a buildsystem...</para>
   </dedication>
   <chapter>
-    <title>HTML 概述</title>
-    <para>You must include at least one chapter in your book.</para>
-    <para>Here is another paragraph.</para>
-    <important>
-      <para>This is some really important text.</para>
-    </important>
-    <tip>
-      <para>Look both ways before crossing the street!</para>
-    </tip>
-    <caution>
-      <para>
-	Liberal use of <code>new</code> in loops can cause performance issues!
-      </para>
-    </caution>
-    <note><para>当然过高评估! </para></note>
-    <example>
-      <title>Example 1</title>
-      <programlisting>
-	String something = "Something";
-      </programlisting>        
-    </example>
+    <title>What is CMake?</title>
+    <itemizedlist>
+      <listitem><para>Cross platform buildsystem.</para></listitem>
+      <listitem><para>Creates Makefiles (e.g. GNU, Borland, MS)</para></listitem>
+      <listitem><para>supports C++,C,Java,Fortran</para></listitem>
+      <listitem><para>simple script language</para></listitem>
+      <listitem><para>Used by e.g. KDE 4, Chicken Schema, libgphoto</para></listitem>
+    </itemizedlist>
   </chapter>
   <chapter>
-    <title>HTML 标签</title>
-    <para>HTML 标签分为好多种。</para>
-    <section>
-      <title>Link</title>
-      <para>What is the HTML Link?</para>
-    </section>
-    <section>
-      <title>Table</title>
-      <para>What is the HTML Table?</para>
-    </section>
+  <title>CMake:Build Software</title>
+    <itemizedlist>
+	<listitem><para>supports executables, static and shared libraries. </para></listitem>
+	<listitem><para>care for platform specfic issues.</para></listitem>
+    </itemizedlist>
+    <example>
+      <title>build example.</title>
+      <para>
+	<programlisting language="cmake">
+  set(foo_srcs a.c b.c)  <lineannotation>set variable</lineannotation>
+  add_library(foo SHARED ${foo_srcs}) <co xml:id="test-co" linkends="add"/>
+  add_executable(hello main.c) <co xml:id="test1-co" linkends="add1"/>
+  target_link_libraries(hello foo)
+  install(TARGETS foo DESTINATION lib)
+	</programlisting>
+	<calloutlist>
+	  <callout arearefs="test-co" xml:id="add">
+	    <para>a test.</para>
+	  </callout>
+	  <callout arearefs="test1-co" xml:id="add1">
+	    <para>test1.</para>
+	  </callout>
+	</calloutlist>
+      </para>
+    </example>
+    <informalexample>
+      <para>
+	<programlisting language="c">
+	  <![CDATA[
+#include "stdio.h"
+
+int main(int argc, char **argv) {
+        printf("%.20f - %.20f = %.20f", 44763578.0f, 44763574.0f, 44763578.0f - 44763574.0f);
+}
+	  ]]>
+	</programlisting>
+      </para>
+    </informalexample>
   </chapter>
 </book>
