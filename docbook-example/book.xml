@@ -20,42 +20,41 @@
     </itemizedlist>
   </chapter>
   <chapter>
-  <title>CMake:Build Software</title>
+    <title>CMake:Build Software</title>
     <itemizedlist>
-	<listitem><para>supports executables, static and shared libraries. </para></listitem>
-	<listitem><para>care for platform specfic issues.</para></listitem>
+      <listitem><para>supports executables, static and shared libraries. </para></listitem>
+      <listitem><para>care for platform specfic issues.</para></listitem>
     </itemizedlist>
     <example>
       <title>build example.</title>
       <para>
-	<programlisting language="cmake">
-  set(foo_srcs a.c b.c)  <lineannotation>set variable</lineannotation>
-  add_library(foo SHARED ${foo_srcs}) <co xml:id="test-co" linkends="add"/>
-  add_executable(hello main.c) <co xml:id="test1-co" linkends="add1"/>
-  target_link_libraries(hello foo)
-  install(TARGETS foo DESTINATION lib)
-	</programlisting>
-	<calloutlist>
-	  <callout arearefs="test-co" xml:id="add">
-	    <para>a test.</para>
-	  </callout>
-	  <callout arearefs="test1-co" xml:id="add1">
-	    <para>test1.</para>
-	  </callout>
-	</calloutlist>
+	<programlistingco>
+	  <areaspec><area xml:id="condition-co" linkends="condition" coords="1 23"/></areaspec>
+	  <programlisting language="cmake"><textobject><textdata fileref="cmake.txt"></textdata></textobject>
+	  </programlisting>
+	  <calloutlist>
+	    <callout arearefs="condition-co" xml:id="condition">
+	      <para>Make this condition.</para>
+	    </callout>
+	  </calloutlist>
+	  
+	</programlistingco>
       </para>
     </example>
     <informalexample>
       <para>
-	<programlisting language="c">
-	  <![CDATA[
-#include "stdio.h"
-
-int main(int argc, char **argv) {
-        printf("%.20f - %.20f = %.20f", 44763578.0f, 44763574.0f, 44763578.0f - 44763574.0f);
-}
-	  ]]>
-	</programlisting>
+	<programlistingco>
+	  <areaspec>
+	    <area xml:id="condition-co" linkends="condition" coords="1 23"/>
+	  </areaspec>
+	  <programlisting language="c"><textobject><textdata fileref="test.c"/></textobject>
+	  </programlisting>
+	  <calloutlist>
+	    <callout arearefs="condition-co" xml:id="condition">
+	      <para>Make this condition.</para>
+	    </callout>
+	  </calloutlist>
+	</programlistingco>
       </para>
     </informalexample>
   </chapter>

@@ -1,99 +1,134 @@
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Chapter 2. CMake:Build Software</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
-<link rel="home" href="index.html" title="CMake Study">
-<link rel="up" href="index.html" title="CMake Study">
-<link rel="prev" href="ch01.html" title="Chapter 1. What is CMake?">
-</head>
-<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<div class="navheader">
-<table width="100%" summary="Navigation header">
-<tr><th colspan="3" align="center">Chapter 2. CMake:Build Software</th></tr>
-<tr>
-<td width="20%" align="left">
-<a accesskey="p" href="ch01.html"><img src="images/prev.gif" alt="Prev"></a> </td>
-<th width="60%" align="center"> </th>
-<td width="20%" align="right"> </td>
-</tr>
-</table>
-<hr>
-</div>
-<div class="chapter">
-<div class="titlepage"><div><div><h1 class="title">
-<a name="id418293"></a>Chapter 2. CMake:Build Software</h1></div></div></div>
-  
-    <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem"><p>supports executables, static and shared libraries. </p></li>
-<li class="listitem"><p>care for platform specfic issues.</p></li>
-</ul></div>
-    <div class="example">
-<a name="id418311"></a><p class="title"><b>Example 2.1. build example.</b></p>
-<div class="example-contents">
-      
-      <p>
-	</p>
-<pre class="programlisting">
-  set(foo_srcs a.c b.c)  <em class="lineannotation"><span class="lineannotation">set variable</span></em>
-  add_library(foo SHARED ${foo_srcs}) <a class="co" name="test-co" href="ch02.html#add"><span><img src="images/callouts/1.png" alt="1" border="0"></span></a>
-  add_executable(hello main.c) <a class="co" name="test1-co" href="ch02.html#add1"><span><img src="images/callouts/2.png" alt="2" border="0"></span></a>
-  target_link_libraries(hello foo)
-  install(TARGETS foo DESTINATION lib)
-	</pre>
-<p>
-	</p>
-<div class="calloutlist"><table border="0" summary="Callout list">
-<tr>
-<td width="5%" valign="top" align="left"><p><a name="add"></a><a href="#test-co"><span><img src="images/callouts/1.png" alt="1" border="0"></span></a> </p></td>
-<td valign="top" align="left">
-	    <p>a test.</p>
-	  </td>
-</tr>
-<tr>
-<td width="5%" valign="top" align="left"><p><a name="add1"></a><a href="#test1-co"><span><img src="images/callouts/2.png" alt="2" border="0"></span></a> </p></td>
-<td valign="top" align="left">
-	    <p>test1.</p>
-	  </td>
-</tr>
-</table></div>
-<p>
-      </p>
-    </div>
-</div>
-<br class="example-break">
-    <div class="informalexample">
-      <p>
-	</p>
-<pre class="programlisting">
-	  
-#include "stdio.h"
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <title>Chapter&nbsp;2.&nbsp;CMake:Build Software</title>
+      <link rel="stylesheet" type="text/css" href="style1.css">
+      <meta name="generator" content="DocBook XSL Stylesheets V1.78.0">
+      <link rel="home" href="index.html" title="CMake Study">
+      <link rel="up" href="index.html" title="CMake Study">
+      <link rel="prev" href="ch01.html" title="Chapter&nbsp;1.&nbsp;What is CMake?">
+   </head>
+   <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+      <div class="navheader">
+         <table width="100%" summary="Navigation header">
+            <tr>
+               <th colspan="3" align="center">Chapter&nbsp;2.&nbsp;CMake:Build Software</th>
+            </tr>
+            <tr>
+               <td width="20%" align="left"><a accesskey="p" href="ch01.html"><img src="images/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <th width="60%" align="center">&nbsp;</th>
+               <td width="20%" align="right">&nbsp;</td>
+            </tr>
+         </table>
+         <hr>
+      </div>
+      <div class="chapter">
+         <div class="titlepage">
+            <div>
+               <div>
+                  <h1 class="title"><a name="d5e24"></a>Chapter&nbsp;2.&nbsp;CMake:Build Software
+                  </h1>
+               </div>
+            </div>
+         </div>
+             
+             
+         <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+               <li class="listitem">
+                  <p>supports executables, static and shared libraries. </p>
+               </li>
+               <li class="listitem">
+                  <p>care for platform specfic issues.</p>
+               </li>
+            </ul>
+         </div>
+             
+         <div class="example"><a name="d5e31"></a><p class="title"><b>Example&nbsp;2.1.&nbsp;build example.</b></p>
+            <div class="example-contents">
+                     
+                     
+               <p>
+                  	
+               </p>
+               <div class="programlistingco"><pre class="programlisting">SET(foo_srcs a.c b.c) <span class="co" id="condition-co"><img src="images/callouts/1.png" alt="(1)"></span>
+ADD_LIBRARY(foo SHARED ${foo_srcs})
+ADD_EXECUTABLE(hello main.c)
+target_link_libraries(hello foo)
+install(TARGETS foo DESTINATION lib)
 
-int main(int argc, char **argv) {
-        printf("%.20f - %.20f = %.20f", 44763578.0f, 44763574.0f, 44763578.0f - 44763574.0f);
+	  </pre><div class="calloutlist">
+                     <table border="0" summary="Callout list">
+                        <tr>
+                           <td width="5%" valign="top" align="left">
+                              <p><a name="condition"></a><span><img src="images/callouts/1.png" alt="1" border="0"></span></p>
+                           </td>
+                           <td valign="top" align="left">
+                              	      
+                              <p>Make this condition.</p>
+                              	    
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+               <p>
+                        
+               </p>
+                   
+            </div>
+         </div><br class="example-break">
+             
+         <div class="informalexample">
+                  
+            <p>
+               	
+            </p>
+            <div class="programlistingco"><pre class="programlisting">#include <span class="hl-string">"stdio.h"</span>    <span class="co" id="condition-co"><img src="images/callouts/1.png" alt="(1)"></span>
+
+<span class="hl-keyword">int</span> main(<span class="hl-keyword">int</span> argc, <span class="hl-keyword">char</span> **argv) {
+  printlf(<span class="hl-string">"%s"</span>, <span class="hl-string">"hello,world"</span>);
+  <span class="hl-keyword">return</span> <span class="hl-number">0</span>;
 }
-	  
-	</pre>
-<p>
-      </p>
-    </div>
-  </div>
-<div class="navfooter">
-<hr>
-<table width="100%" summary="Navigation footer">
-<tr>
-<td width="40%" align="left">
-<a accesskey="p" href="ch01.html"><img src="images/prev.gif" alt="Prev"></a> </td>
-<td width="20%" align="center"> </td>
-<td width="40%" align="right"> </td>
-</tr>
-<tr>
-<td width="40%" align="left" valign="top">Chapter 1. What is CMake? </td>
-<td width="20%" align="center"><a accesskey="h" href="index.html"><img src="images/home.gif" alt="Home"></a></td>
-<td width="40%" align="right" valign="top"> </td>
-</tr>
-</table>
-</div>
-</body>
+	  </pre><div class="calloutlist">
+                  <table border="0" summary="Callout list">
+                     <tr>
+                        <td width="5%" valign="top" align="left">
+                           <p><a name="condition"></a><span><img src="images/callouts/1.png" alt="1" border="0"></span></p>
+                        </td>
+                        <td valign="top" align="left">
+                           	      
+                           <p>Make this condition.</p>
+                           	    
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <p>
+                     
+            </p>
+                
+         </div>
+           
+      </div>
+      <div class="navfooter">
+         <hr>
+         <table width="100%" summary="Navigation footer">
+            <tr>
+               <td width="40%" align="left"><a accesskey="p" href="ch01.html"><img src="images/prev.gif" alt="Prev"></a>&nbsp;
+               </td>
+               <td width="20%" align="center">&nbsp;</td>
+               <td width="40%" align="right">&nbsp;</td>
+            </tr>
+            <tr>
+               <td width="40%" align="left" valign="top">Chapter&nbsp;1.&nbsp;What is CMake?&nbsp;</td>
+               <td width="20%" align="center"><a accesskey="h" href="index.html"><img src="images/home.gif" alt="Home"></a></td>
+               <td width="40%" align="right" valign="top">&nbsp;</td>
+            </tr>
+         </table>
+      </div>
+   </body>
 </html>

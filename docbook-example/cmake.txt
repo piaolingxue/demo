@@ -1,0 +1,6 @@
+SET(foo_srcs a.c b.c) 
+ADD_LIBRARY(foo SHARED ${foo_srcs})
+ADD_EXECUTABLE(hello main.c)
+target_link_libraries(hello foo)
+install(TARGETS foo DESTINATION lib)
+
