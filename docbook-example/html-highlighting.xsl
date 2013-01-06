@@ -14,7 +14,7 @@
 
      ******************************************************************** -->
 
-	<xsl:import href="../../docbook-ant/xsl/docbook/highlighting/common.xsl"/>
+	<xsl:import href=""/>
 	<xsl:param name="highlight.source" select="1"/>
 	<xsl:param name="highlight.default.language" select="java" />
 	

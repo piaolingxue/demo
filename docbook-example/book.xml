@@ -45,12 +45,12 @@
       <para>
 	<programlistingco>
 	  <areaspec>
-	    <area xml:id="condition-co" linkends="condition" coords="1 23"/>
+	    <area xml:id="condition-co1" linkends="condition1" coords="1 23"/>
 	  </areaspec>
 	  <programlisting language="c"><textobject><textdata fileref="test.c"/></textobject>
 	  </programlisting>
 	  <calloutlist>
-	    <callout arearefs="condition-co" xml:id="condition">
+	    <callout arearefs="condition-co1" xml:id="condition1">
 	      <para>Make this condition.</para>
 	    </callout>
 	  </calloutlist>
